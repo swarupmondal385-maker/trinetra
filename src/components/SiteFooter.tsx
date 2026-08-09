@@ -4,6 +4,8 @@ import { navGroups } from "@/data/nav";
 import { festival, contacts } from "@/data/site";
 import { TrinetraMark } from "./TrinetraMark";
 
+const sponsorship = contacts.find((c) => c.role === "Sponsorship Head");
+
 export function SiteFooter() {
   return (
     <footer className="relative border-t border-border bg-card/40">
@@ -25,14 +27,14 @@ export function SiteFooter() {
             </p>
             <p className="flex items-center gap-2">
               <Mail className="h-4 w-4 shrink-0 text-accent" />
-              <a className="hover:text-foreground" href={`mailto:${contacts[4].email}`}>
-                {contacts[4].email}
+              <a className="hover:text-foreground" href={`mailto:${sponsorship?.email}`}>
+                {sponsorship?.email}
               </a>
             </p>
             <p className="flex items-center gap-2">
               <Phone className="h-4 w-4 shrink-0 text-accent" />
-              <a className="hover:text-foreground" href={`tel:+91${contacts[4].phone}`}>
-                +91 {contacts[4].phone}
+              <a className="hover:text-foreground" href={`tel:+91${sponsorship?.phone}`}>
+                +91 {sponsorship?.phone}
               </a>
             </p>
           </div>

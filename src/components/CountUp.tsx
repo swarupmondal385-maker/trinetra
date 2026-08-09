@@ -16,7 +16,7 @@ export function CountUp({ value, className }: { value: string; className?: strin
     }
     const raw = match[0];
     const target = parseFloat(raw.replace(/,/g, ""));
-    const decimals = raw.includes(".") ? raw.split(".")[1].length : 0;
+    const decimals = raw.includes(".") ? (raw.split(".")[1] ?? "").length : 0;
     const grouped = raw.includes(",");
 
     const reduce =
