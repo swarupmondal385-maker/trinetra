@@ -394,6 +394,7 @@ export const contacts: Contact[] = [
   { role: "Faculty Coordinator", name: "Prof. Purbali Sengupta", email: "purbali4042@gmail.com", showPhone: false },
   { role: "Convenor", name: "Mr. Sampad Roy", email: "sampadroy27@gmail.com", phone: "9907580760", showPhone: true },
   { role: "Co-Convenor", name: "Ms. Sananda Choudhury", email: "sanandachoudhury675@gmail.com", phone: "8250581123", showPhone: true },
+  { role: "Technology & R&D Head", name: "Mr. Swarup Mondal", email: "swarupmondal385@gmail.com", phone: "8617553986", showPhone: true },
   { role: "Operations Head", name: "Mr. Agnibhu Bijali", email: "agnibhu.bijali.business@gmail.com", phone: "6289206366", showPhone: true },
   { role: "Sponsorship Head", name: "Mr. Suparno Samanta", email: "samantasuparno2005@gmail.com", phone: "9832561909", showPhone: true },
 ];

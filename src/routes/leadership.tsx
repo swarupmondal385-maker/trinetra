@@ -22,7 +22,7 @@ export const Route = createFileRoute("/leadership")({
 function Leadership() {
   const groups = [
     { title: "Faculty guidance", people: contacts.filter((c) => c.role === "Faculty Coordinator") },
-    { title: "Executive leadership", people: contacts.filter((c) => c.role === "Convenor" || c.role === "Co-Convenor") },
+    { title: "Executive leadership", people: contacts.filter((c) => c.role === "Convenor" || c.role === "Co-Convenor" || c.role === "Technology & R&D Head") },
     { title: "Operations", people: contacts.filter((c) => c.role === "Operations Head") },
     { title: "Sponsorship", people: contacts.filter((c) => c.role === "Sponsorship Head") },
   ];
