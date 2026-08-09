@@ -12,7 +12,9 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutMakautRouteImport } from './routes/about-makaut'
 import { Route as AboutMcaRouteImport } from './routes/about-mca'
+import { Route as ActivationLabRouteImport } from './routes/activation-lab'
 import { Route as AudienceRouteImport } from './routes/audience'
+import { Route as CategoriesRouteImport } from './routes/categories'
 import { Route as ClubsRouteImport } from './routes/clubs'
 import { Route as CredRouteImport } from './routes/cred'
 import { Route as ExperienceRouteImport } from './routes/experience'
@@ -20,6 +22,8 @@ import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as HeadlinersRouteImport } from './routes/headliners'
 import { Route as JourneyRouteImport } from './routes/journey'
 import { Route as LeadershipRouteImport } from './routes/leadership'
+import { Route as PackagesRouteImport } from './routes/packages'
+import { Route as PartnerRouteImport } from './routes/partner'
 import { Route as PreviousSponsorsRouteImport } from './routes/previous-sponsors'
 import { Route as ProofRouteImport } from './routes/proof'
 import { Route as ScheduleRouteImport } from './routes/schedule'
@@ -41,9 +45,19 @@ const AboutMcaRoute = AboutMcaRouteImport.update({
   path: '/about-mca',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ActivationLabRoute = ActivationLabRouteImport.update({
+  id: '/activation-lab',
+  path: '/activation-lab',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AudienceRoute = AudienceRouteImport.update({
   id: '/audience',
   path: '/audience',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CategoriesRoute = CategoriesRouteImport.update({
+  id: '/categories',
+  path: '/categories',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ClubsRoute = ClubsRouteImport.update({
@@ -81,6 +95,16 @@ const LeadershipRoute = LeadershipRouteImport.update({
   path: '/leadership',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PackagesRoute = PackagesRouteImport.update({
+  id: '/packages',
+  path: '/packages',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PartnerRoute = PartnerRouteImport.update({
+  id: '/partner',
+  path: '/partner',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PreviousSponsorsRoute = PreviousSponsorsRouteImport.update({
   id: '/previous-sponsors',
   path: '/previous-sponsors',
@@ -111,7 +135,9 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about-makaut': typeof AboutMakautRoute
   '/about-mca': typeof AboutMcaRoute
+  '/activation-lab': typeof ActivationLabRoute
   '/audience': typeof AudienceRoute
+  '/categories': typeof CategoriesRoute
   '/clubs': typeof ClubsRoute
   '/cred': typeof CredRoute
   '/experience': typeof ExperienceRoute
@@ -119,6 +145,8 @@ export interface FileRoutesByFullPath {
   '/headliners': typeof HeadlinersRoute
   '/journey': typeof JourneyRoute
   '/leadership': typeof LeadershipRoute
+  '/packages': typeof PackagesRoute
+  '/partner': typeof PartnerRoute
   '/previous-sponsors': typeof PreviousSponsorsRoute
   '/proof': typeof ProofRoute
   '/schedule': typeof ScheduleRoute
@@ -129,7 +157,9 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about-makaut': typeof AboutMakautRoute
   '/about-mca': typeof AboutMcaRoute
+  '/activation-lab': typeof ActivationLabRoute
   '/audience': typeof AudienceRoute
+  '/categories': typeof CategoriesRoute
   '/clubs': typeof ClubsRoute
   '/cred': typeof CredRoute
   '/experience': typeof ExperienceRoute
@@ -137,6 +167,8 @@ export interface FileRoutesByTo {
   '/headliners': typeof HeadlinersRoute
   '/journey': typeof JourneyRoute
   '/leadership': typeof LeadershipRoute
+  '/packages': typeof PackagesRoute
+  '/partner': typeof PartnerRoute
   '/previous-sponsors': typeof PreviousSponsorsRoute
   '/proof': typeof ProofRoute
   '/schedule': typeof ScheduleRoute
@@ -148,7 +180,9 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about-makaut': typeof AboutMakautRoute
   '/about-mca': typeof AboutMcaRoute
+  '/activation-lab': typeof ActivationLabRoute
   '/audience': typeof AudienceRoute
+  '/categories': typeof CategoriesRoute
   '/clubs': typeof ClubsRoute
   '/cred': typeof CredRoute
   '/experience': typeof ExperienceRoute
@@ -156,6 +190,8 @@ export interface FileRoutesById {
   '/headliners': typeof HeadlinersRoute
   '/journey': typeof JourneyRoute
   '/leadership': typeof LeadershipRoute
+  '/packages': typeof PackagesRoute
+  '/partner': typeof PartnerRoute
   '/previous-sponsors': typeof PreviousSponsorsRoute
   '/proof': typeof ProofRoute
   '/schedule': typeof ScheduleRoute
@@ -168,7 +204,9 @@ export interface FileRouteTypes {
     | '/'
     | '/about-makaut'
     | '/about-mca'
+    | '/activation-lab'
     | '/audience'
+    | '/categories'
     | '/clubs'
     | '/cred'
     | '/experience'
@@ -176,6 +214,8 @@ export interface FileRouteTypes {
     | '/headliners'
     | '/journey'
     | '/leadership'
+    | '/packages'
+    | '/partner'
     | '/previous-sponsors'
     | '/proof'
     | '/schedule'
@@ -186,7 +226,9 @@ export interface FileRouteTypes {
     | '/'
     | '/about-makaut'
     | '/about-mca'
+    | '/activation-lab'
     | '/audience'
+    | '/categories'
     | '/clubs'
     | '/cred'
     | '/experience'
@@ -194,6 +236,8 @@ export interface FileRouteTypes {
     | '/headliners'
     | '/journey'
     | '/leadership'
+    | '/packages'
+    | '/partner'
     | '/previous-sponsors'
     | '/proof'
     | '/schedule'
@@ -204,7 +248,9 @@ export interface FileRouteTypes {
     | '/'
     | '/about-makaut'
     | '/about-mca'
+    | '/activation-lab'
     | '/audience'
+    | '/categories'
     | '/clubs'
     | '/cred'
     | '/experience'
@@ -212,6 +258,8 @@ export interface FileRouteTypes {
     | '/headliners'
     | '/journey'
     | '/leadership'
+    | '/packages'
+    | '/partner'
     | '/previous-sponsors'
     | '/proof'
     | '/schedule'
@@ -223,7 +271,9 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutMakautRoute: typeof AboutMakautRoute
   AboutMcaRoute: typeof AboutMcaRoute
+  ActivationLabRoute: typeof ActivationLabRoute
   AudienceRoute: typeof AudienceRoute
+  CategoriesRoute: typeof CategoriesRoute
   ClubsRoute: typeof ClubsRoute
   CredRoute: typeof CredRoute
   ExperienceRoute: typeof ExperienceRoute
@@ -231,6 +281,8 @@ export interface RootRouteChildren {
   HeadlinersRoute: typeof HeadlinersRoute
   JourneyRoute: typeof JourneyRoute
   LeadershipRoute: typeof LeadershipRoute
+  PackagesRoute: typeof PackagesRoute
+  PartnerRoute: typeof PartnerRoute
   PreviousSponsorsRoute: typeof PreviousSponsorsRoute
   ProofRoute: typeof ProofRoute
   ScheduleRoute: typeof ScheduleRoute
@@ -261,11 +313,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutMcaRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/activation-lab': {
+      id: '/activation-lab'
+      path: '/activation-lab'
+      fullPath: '/activation-lab'
+      preLoaderRoute: typeof ActivationLabRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/audience': {
       id: '/audience'
       path: '/audience'
       fullPath: '/audience'
       preLoaderRoute: typeof AudienceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/categories': {
+      id: '/categories'
+      path: '/categories'
+      fullPath: '/categories'
+      preLoaderRoute: typeof CategoriesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/clubs': {
@@ -317,6 +383,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LeadershipRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/packages': {
+      id: '/packages'
+      path: '/packages'
+      fullPath: '/packages'
+      preLoaderRoute: typeof PackagesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/partner': {
+      id: '/partner'
+      path: '/partner'
+      fullPath: '/partner'
+      preLoaderRoute: typeof PartnerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/previous-sponsors': {
       id: '/previous-sponsors'
       path: '/previous-sponsors'
@@ -359,7 +439,9 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutMakautRoute: AboutMakautRoute,
   AboutMcaRoute: AboutMcaRoute,
+  ActivationLabRoute: ActivationLabRoute,
   AudienceRoute: AudienceRoute,
+  CategoriesRoute: CategoriesRoute,
   ClubsRoute: ClubsRoute,
   CredRoute: CredRoute,
   ExperienceRoute: ExperienceRoute,
@@ -367,6 +449,8 @@ const rootRouteChildren: RootRouteChildren = {
   HeadlinersRoute: HeadlinersRoute,
   JourneyRoute: JourneyRoute,
   LeadershipRoute: LeadershipRoute,
+  PackagesRoute: PackagesRoute,
+  PartnerRoute: PartnerRoute,
   PreviousSponsorsRoute: PreviousSponsorsRoute,
   ProofRoute: ProofRoute,
   ScheduleRoute: ScheduleRoute,
