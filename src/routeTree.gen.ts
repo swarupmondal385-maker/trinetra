@@ -12,7 +12,12 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutMakautRouteImport } from './routes/about-makaut'
 import { Route as AboutMcaRouteImport } from './routes/about-mca'
+import { Route as ClubsRouteImport } from './routes/clubs'
+import { Route as CredRouteImport } from './routes/cred'
 import { Route as ExperienceRouteImport } from './routes/experience'
+import { Route as HeadlinersRouteImport } from './routes/headliners'
+import { Route as JourneyRouteImport } from './routes/journey'
+import { Route as LeadershipRouteImport } from './routes/leadership'
 import { Route as ScheduleRouteImport } from './routes/schedule'
 import { Route as StoryRouteImport } from './routes/story'
 
@@ -31,9 +36,34 @@ const AboutMcaRoute = AboutMcaRouteImport.update({
   path: '/about-mca',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ClubsRoute = ClubsRouteImport.update({
+  id: '/clubs',
+  path: '/clubs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CredRoute = CredRouteImport.update({
+  id: '/cred',
+  path: '/cred',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ExperienceRoute = ExperienceRouteImport.update({
   id: '/experience',
   path: '/experience',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HeadlinersRoute = HeadlinersRouteImport.update({
+  id: '/headliners',
+  path: '/headliners',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const JourneyRoute = JourneyRouteImport.update({
+  id: '/journey',
+  path: '/journey',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LeadershipRoute = LeadershipRouteImport.update({
+  id: '/leadership',
+  path: '/leadership',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ScheduleRoute = ScheduleRouteImport.update({
@@ -51,7 +81,12 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about-makaut': typeof AboutMakautRoute
   '/about-mca': typeof AboutMcaRoute
+  '/clubs': typeof ClubsRoute
+  '/cred': typeof CredRoute
   '/experience': typeof ExperienceRoute
+  '/headliners': typeof HeadlinersRoute
+  '/journey': typeof JourneyRoute
+  '/leadership': typeof LeadershipRoute
   '/schedule': typeof ScheduleRoute
   '/story': typeof StoryRoute
 }
@@ -59,7 +94,12 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about-makaut': typeof AboutMakautRoute
   '/about-mca': typeof AboutMcaRoute
+  '/clubs': typeof ClubsRoute
+  '/cred': typeof CredRoute
   '/experience': typeof ExperienceRoute
+  '/headliners': typeof HeadlinersRoute
+  '/journey': typeof JourneyRoute
+  '/leadership': typeof LeadershipRoute
   '/schedule': typeof ScheduleRoute
   '/story': typeof StoryRoute
 }
@@ -68,7 +108,12 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about-makaut': typeof AboutMakautRoute
   '/about-mca': typeof AboutMcaRoute
+  '/clubs': typeof ClubsRoute
+  '/cred': typeof CredRoute
   '/experience': typeof ExperienceRoute
+  '/headliners': typeof HeadlinersRoute
+  '/journey': typeof JourneyRoute
+  '/leadership': typeof LeadershipRoute
   '/schedule': typeof ScheduleRoute
   '/story': typeof StoryRoute
 }
@@ -78,7 +123,12 @@ export interface FileRouteTypes {
     | '/'
     | '/about-makaut'
     | '/about-mca'
+    | '/clubs'
+    | '/cred'
     | '/experience'
+    | '/headliners'
+    | '/journey'
+    | '/leadership'
     | '/schedule'
     | '/story'
   fileRoutesByTo: FileRoutesByTo
@@ -86,7 +136,12 @@ export interface FileRouteTypes {
     | '/'
     | '/about-makaut'
     | '/about-mca'
+    | '/clubs'
+    | '/cred'
     | '/experience'
+    | '/headliners'
+    | '/journey'
+    | '/leadership'
     | '/schedule'
     | '/story'
   id:
@@ -94,7 +149,12 @@ export interface FileRouteTypes {
     | '/'
     | '/about-makaut'
     | '/about-mca'
+    | '/clubs'
+    | '/cred'
     | '/experience'
+    | '/headliners'
+    | '/journey'
+    | '/leadership'
     | '/schedule'
     | '/story'
   fileRoutesById: FileRoutesById
@@ -103,7 +163,12 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutMakautRoute: typeof AboutMakautRoute
   AboutMcaRoute: typeof AboutMcaRoute
+  ClubsRoute: typeof ClubsRoute
+  CredRoute: typeof CredRoute
   ExperienceRoute: typeof ExperienceRoute
+  HeadlinersRoute: typeof HeadlinersRoute
+  JourneyRoute: typeof JourneyRoute
+  LeadershipRoute: typeof LeadershipRoute
   ScheduleRoute: typeof ScheduleRoute
   StoryRoute: typeof StoryRoute
 }
@@ -131,11 +196,46 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutMcaRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/clubs': {
+      id: '/clubs'
+      path: '/clubs'
+      fullPath: '/clubs'
+      preLoaderRoute: typeof ClubsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cred': {
+      id: '/cred'
+      path: '/cred'
+      fullPath: '/cred'
+      preLoaderRoute: typeof CredRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/experience': {
       id: '/experience'
       path: '/experience'
       fullPath: '/experience'
       preLoaderRoute: typeof ExperienceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/headliners': {
+      id: '/headliners'
+      path: '/headliners'
+      fullPath: '/headliners'
+      preLoaderRoute: typeof HeadlinersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/journey': {
+      id: '/journey'
+      path: '/journey'
+      fullPath: '/journey'
+      preLoaderRoute: typeof JourneyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/leadership': {
+      id: '/leadership'
+      path: '/leadership'
+      fullPath: '/leadership'
+      preLoaderRoute: typeof LeadershipRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/schedule': {
@@ -159,7 +259,12 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutMakautRoute: AboutMakautRoute,
   AboutMcaRoute: AboutMcaRoute,
+  ClubsRoute: ClubsRoute,
+  CredRoute: CredRoute,
   ExperienceRoute: ExperienceRoute,
+  HeadlinersRoute: HeadlinersRoute,
+  JourneyRoute: JourneyRoute,
+  LeadershipRoute: LeadershipRoute,
   ScheduleRoute: ScheduleRoute,
   StoryRoute: StoryRoute,
 }
