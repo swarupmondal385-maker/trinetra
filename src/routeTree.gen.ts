@@ -10,33 +10,102 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutMakautRouteImport } from './routes/about-makaut'
+import { Route as AboutMcaRouteImport } from './routes/about-mca'
+import { Route as ExperienceRouteImport } from './routes/experience'
+import { Route as ScheduleRouteImport } from './routes/schedule'
+import { Route as StoryRouteImport } from './routes/story'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutMakautRoute = AboutMakautRouteImport.update({
+  id: '/about-makaut',
+  path: '/about-makaut',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutMcaRoute = AboutMcaRouteImport.update({
+  id: '/about-mca',
+  path: '/about-mca',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ExperienceRoute = ExperienceRouteImport.update({
+  id: '/experience',
+  path: '/experience',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ScheduleRoute = ScheduleRouteImport.update({
+  id: '/schedule',
+  path: '/schedule',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StoryRoute = StoryRouteImport.update({
+  id: '/story',
+  path: '/story',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about-makaut': typeof AboutMakautRoute
+  '/about-mca': typeof AboutMcaRoute
+  '/experience': typeof ExperienceRoute
+  '/schedule': typeof ScheduleRoute
+  '/story': typeof StoryRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about-makaut': typeof AboutMakautRoute
+  '/about-mca': typeof AboutMcaRoute
+  '/experience': typeof ExperienceRoute
+  '/schedule': typeof ScheduleRoute
+  '/story': typeof StoryRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about-makaut': typeof AboutMakautRoute
+  '/about-mca': typeof AboutMcaRoute
+  '/experience': typeof ExperienceRoute
+  '/schedule': typeof ScheduleRoute
+  '/story': typeof StoryRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about-makaut'
+    | '/about-mca'
+    | '/experience'
+    | '/schedule'
+    | '/story'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about-makaut'
+    | '/about-mca'
+    | '/experience'
+    | '/schedule'
+    | '/story'
+  id:
+    | '__root__'
+    | '/'
+    | '/about-makaut'
+    | '/about-mca'
+    | '/experience'
+    | '/schedule'
+    | '/story'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutMakautRoute: typeof AboutMakautRoute
+  AboutMcaRoute: typeof AboutMcaRoute
+  ExperienceRoute: typeof ExperienceRoute
+  ScheduleRoute: typeof ScheduleRoute
+  StoryRoute: typeof StoryRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +117,51 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about-makaut': {
+      id: '/about-makaut'
+      path: '/about-makaut'
+      fullPath: '/about-makaut'
+      preLoaderRoute: typeof AboutMakautRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about-mca': {
+      id: '/about-mca'
+      path: '/about-mca'
+      fullPath: '/about-mca'
+      preLoaderRoute: typeof AboutMcaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/experience': {
+      id: '/experience'
+      path: '/experience'
+      fullPath: '/experience'
+      preLoaderRoute: typeof ExperienceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/schedule': {
+      id: '/schedule'
+      path: '/schedule'
+      fullPath: '/schedule'
+      preLoaderRoute: typeof ScheduleRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/story': {
+      id: '/story'
+      path: '/story'
+      fullPath: '/story'
+      preLoaderRoute: typeof StoryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutMakautRoute: AboutMakautRoute,
+  AboutMcaRoute: AboutMcaRoute,
+  ExperienceRoute: ExperienceRoute,
+  ScheduleRoute: ScheduleRoute,
+  StoryRoute: StoryRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
