@@ -1,36 +1,28 @@
 import { createFileRoute } from "@tanstack/react-router";
-import heroCrowd from "@/assets/hero-crowd.jpg";
-import stageBand from "@/assets/stage-band.jpg";
-import danceTroupe from "@/assets/dance-troupe.jpg";
-import dhaki from "@/assets/dhaki.jpg";
-import campus from "@/assets/campus.jpg";
 import { CTABand, PageHero, PhotoProof, Section } from "@/components/blocks";
 import { Reveal } from "@/components/Reveal";
+import { proofPhotos } from "@/data/proof-photos";
 
 export const Route = createFileRoute("/gallery")({
   head: () => ({
     meta: [
       { title: "Gallery & Throwback — Real People, Real Events" },
-      { name: "description", content: "A cinematic archive of MAKAUT cultural moments — crowd, stage, performances and campus, ready for the team's own photographs." },
+      { name: "description", content: "Photographs from past MAKAUT Cultural Association events — main stage production, headline acts, crowd energy and campus craft." },
       { property: "og:title", content: "TRINETRA Gallery & Throwback" },
       { property: "og:description", content: "Real people. Real events. Real experiences." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Gallery,
 });
 
-const shots = [
-  { image: heroCrowd, event: "Festival main stage", year: "Reference", category: "Crowd", caption: "Replace with uploaded crowd photography." },
-  { image: dhaki, event: "Dhaki performance", year: "Reference", category: "Culture", caption: "Replace with uploaded cultural photography." },
-  { image: danceTroupe, event: "Dance showcase", year: "Reference", category: "Performance", caption: "Replace with uploaded club photography." },
-  { image: stageBand, event: "Live concert", year: "Reference", category: "Stage", caption: "Replace with uploaded concert photography." },
-  { image: campus, event: "Campus", year: "Reference", category: "Campus", caption: "Replace with uploaded campus photography." },
-];
+const shots = proofPhotos;
 
 function Gallery() {
   return (
     <>
-      <PageHero eyebrow="Page 12 · Gallery" title={<>Real people.<br />Real events.<br />Real experiences.</>} lede="These are reference visuals. Every frame is a slot — as the team uploads genuine event photography, it replaces the reference image without any redesign." />
+      <PageHero eyebrow="Page 12 · Gallery" title={<>Real people.<br />Real events.<br />Real experiences.</>} lede="Every frame below is an actual photograph from a past MAKAUT Cultural Association event — stage production, headline artists, crowd scale and campus craft." />
 
       <Section>
         <div className="grid gap-4 md:grid-cols-3">
@@ -40,6 +32,7 @@ function Gallery() {
           ))}
         </div>
       </Section>
+
 
       <Section tone="raised" eyebrow="Archive structure" title="Where uploaded media will live.">
         <div className="grid gap-px border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">
