@@ -22,6 +22,19 @@ function Proof() {
     <>
       <PageHero eyebrow="Page 14 · Proof" title={<>Claims are easy.<br />Proof builds partnerships.</>} lede="A trust dashboard: what we claim, what status the claim has, and where it came from." />
 
+      <Section eyebrow="Photographic evidence" title="Past editions, documented.">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {proofPhotos.slice(0, 6).map((p) => (
+            <PhotoProof key={p.event} {...p} className="aspect-[4/3]" />
+          ))}
+        </div>
+        <p className="mt-6 text-xs text-muted-foreground">
+          Photographs supplied by the MAKAUT Cultural Association from previous events.
+        </p>
+      </Section>
+
+
+
       <Section eyebrow="Trust dashboard">
         <div className="overflow-x-auto border border-border">
           <table className="w-full min-w-[46rem] text-left">
