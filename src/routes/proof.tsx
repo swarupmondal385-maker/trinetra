@@ -1,7 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Reveal } from "@/components/Reveal";
-import { CTABand, PageHero, ProofBadge, Section } from "@/components/blocks";
+import { CTABand, PageHero, PhotoProof, ProofBadge, Section } from "@/components/blocks";
 import { mediaKit, metrics } from "@/data/site";
+import { proofPhotos } from "@/data/proof-photos";
+
 
 export const Route = createFileRoute("/proof")({
   head: () => ({
