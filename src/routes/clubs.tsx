@@ -70,7 +70,7 @@ function Clubs() {
 
       <Section tone="raised" eyebrow="Together" title="One association. Multiple creative worlds." />
 
-      <CTABand title="Meet the people who run it." primary={{ label: "Leadership", to: "/leadership" }} secondary={{ label: "CRED", to: "/cred" }} />
+      <CTABand title="Meet the people who run it." primary={{ label: "Leadership", to: "/leadership" }} secondary={{ label: "Partner with us", to: "/partner" }} />
     </>
   );
 }

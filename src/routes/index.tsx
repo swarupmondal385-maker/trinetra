@@ -30,7 +30,7 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "TRINETRA 2026 — MAKAUT Autumn Fest" },
       {
         property: "og:description",
-        content: "Where Bengal's culture meets the next generation. Explore sponsorship opportunities.",
+        content: "TRINETRA — The Sharod Symphony. Where Bengal's greatest saga awakens on campus.",
       },
     ],
   }),
@@ -71,9 +71,9 @@ function Home() {
           <div className="mt-10 grid gap-10 lg:grid-cols-[1.2fr_1fr] lg:items-end">
             <Reveal delay={200}>
               <h2 className="max-w-2xl text-2xl font-extrabold uppercase leading-[1.1] sm:text-4xl">
-                Where Bengal's culture
+                TRINETRA — The Sharod Symphony
                 <br />
-                meets the next generation.
+                <span className="text-gold-gradient">Where Bengal's greatest saga awakens on campus.</span>
               </h2>
               <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground">{festival.intro}</p>
               <div className="mt-9 flex flex-wrap gap-3">
@@ -351,7 +351,7 @@ function Home() {
       </Section>
 
       {/* ---------- PACKAGE PREVIEW ---------- */}
-      <Section eyebrow="Sponsorship inventory" title="Six ways to partner.">
+      <Section eyebrow="Sponsorship inventory" title="Four ways to partner.">
         <div className="grid gap-px border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
           {packages.map((p, i) => (
             <Reveal key={p.tier} delay={i * 60} className="bg-background">

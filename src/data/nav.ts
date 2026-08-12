@@ -22,7 +22,6 @@ export const navGroups: { group: string; links: NavLink[] }[] = [
     group: "Team",
     links: [
       { label: "Leadership", to: "/leadership", note: "Faculty, executive and cultural leadership" },
-      { label: "CRED", to: "/cred", note: "Corporate Relations and Events" },
     ],
   },
   {
@@ -39,7 +38,7 @@ export const navGroups: { group: string; links: NavLink[] }[] = [
     group: "Sponsorship",
     links: [
       { label: "Why Sponsor TRINETRA", to: "/why-sponsor", note: "Your audience is already here" },
-      { label: "Sponsorship Packages", to: "/packages", note: "₹70,000 to ₹15 Lakh+" },
+      { label: "Sponsorship Packages", to: "/packages", note: "₹3 Lakh to ₹15 Lakh+" },
       { label: "Partnership Categories", to: "/categories", note: "Fifteen category partnerships" },
       { label: "Brand Activation Lab", to: "/activation-lab", note: "See your brand at TRINETRA" },
     ],

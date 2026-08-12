@@ -79,7 +79,7 @@ function Leadership() {
         </div>
       </Section>
 
-      <CTABand title="Talk to the sponsorship desk directly." primary={{ label: "Meet CRED", to: "/cred" }} />
+      <CTABand title="Talk to the sponsorship desk directly." primary={{ label: "Book a meeting", to: "/partner" }} />
     </>
   );
 }
