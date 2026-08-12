@@ -16,7 +16,6 @@ import { Route as ActivationLabRouteImport } from './routes/activation-lab'
 import { Route as AudienceRouteImport } from './routes/audience'
 import { Route as CategoriesRouteImport } from './routes/categories'
 import { Route as ClubsRouteImport } from './routes/clubs'
-import { Route as CredRouteImport } from './routes/cred'
 import { Route as ExperienceRouteImport } from './routes/experience'
 import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as HeadlinersRouteImport } from './routes/headliners'
@@ -63,11 +62,6 @@ const CategoriesRoute = CategoriesRouteImport.update({
 const ClubsRoute = ClubsRouteImport.update({
   id: '/clubs',
   path: '/clubs',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CredRoute = CredRouteImport.update({
-  id: '/cred',
-  path: '/cred',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ExperienceRoute = ExperienceRouteImport.update({
@@ -139,7 +133,6 @@ export interface FileRoutesByFullPath {
   '/audience': typeof AudienceRoute
   '/categories': typeof CategoriesRoute
   '/clubs': typeof ClubsRoute
-  '/cred': typeof CredRoute
   '/experience': typeof ExperienceRoute
   '/gallery': typeof GalleryRoute
   '/headliners': typeof HeadlinersRoute
@@ -161,7 +154,6 @@ export interface FileRoutesByTo {
   '/audience': typeof AudienceRoute
   '/categories': typeof CategoriesRoute
   '/clubs': typeof ClubsRoute
-  '/cred': typeof CredRoute
   '/experience': typeof ExperienceRoute
   '/gallery': typeof GalleryRoute
   '/headliners': typeof HeadlinersRoute
@@ -184,7 +176,6 @@ export interface FileRoutesById {
   '/audience': typeof AudienceRoute
   '/categories': typeof CategoriesRoute
   '/clubs': typeof ClubsRoute
-  '/cred': typeof CredRoute
   '/experience': typeof ExperienceRoute
   '/gallery': typeof GalleryRoute
   '/headliners': typeof HeadlinersRoute
@@ -208,7 +199,6 @@ export interface FileRouteTypes {
     | '/audience'
     | '/categories'
     | '/clubs'
-    | '/cred'
     | '/experience'
     | '/gallery'
     | '/headliners'
@@ -230,7 +220,6 @@ export interface FileRouteTypes {
     | '/audience'
     | '/categories'
     | '/clubs'
-    | '/cred'
     | '/experience'
     | '/gallery'
     | '/headliners'
@@ -252,7 +241,6 @@ export interface FileRouteTypes {
     | '/audience'
     | '/categories'
     | '/clubs'
-    | '/cred'
     | '/experience'
     | '/gallery'
     | '/headliners'
@@ -275,7 +263,6 @@ export interface RootRouteChildren {
   AudienceRoute: typeof AudienceRoute
   CategoriesRoute: typeof CategoriesRoute
   ClubsRoute: typeof ClubsRoute
-  CredRoute: typeof CredRoute
   ExperienceRoute: typeof ExperienceRoute
   GalleryRoute: typeof GalleryRoute
   HeadlinersRoute: typeof HeadlinersRoute
@@ -339,13 +326,6 @@ declare module '@tanstack/react-router' {
       path: '/clubs'
       fullPath: '/clubs'
       preLoaderRoute: typeof ClubsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/cred': {
-      id: '/cred'
-      path: '/cred'
-      fullPath: '/cred'
-      preLoaderRoute: typeof CredRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/experience': {
@@ -443,7 +423,6 @@ const rootRouteChildren: RootRouteChildren = {
   AudienceRoute: AudienceRoute,
   CategoriesRoute: CategoriesRoute,
   ClubsRoute: ClubsRoute,
-  CredRoute: CredRoute,
   ExperienceRoute: ExperienceRoute,
   GalleryRoute: GalleryRoute,
   HeadlinersRoute: HeadlinersRoute,
