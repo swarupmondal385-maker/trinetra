@@ -122,11 +122,42 @@
   --glow-marigold: 0 0 0 1px oklch(0.81 0.166 76 / 35%), 0 0 40px -8px oklch(0.81 0.166 76 / 45%);
 
   --transition-silk: 600ms cubic-bezier(0.16, 1, 0.3, 1);
+
+  --surface-grad: linear-gradient(160deg, oklch(0.2 0.016 34), oklch(0.155 0.01 28));
+  color-scheme: dark;
 }
 
-/* The site is intentionally single-theme (festival night). */
 .dark {
   color-scheme: dark;
+}
+
+/* Daylight theme — ivory paper, vermilion ink. Dark remains the default. */
+.light {
+  color-scheme: light;
+
+  --background: oklch(0.982 0.012 84);
+  --foreground: oklch(0.19 0.02 30);
+  --card: oklch(0.955 0.016 82);
+  --card-foreground: oklch(0.19 0.02 30);
+  --popover: oklch(0.99 0.008 84);
+  --popover-foreground: oklch(0.19 0.02 30);
+  --primary: var(--vermilion);
+  --primary-foreground: oklch(0.98 0.012 85);
+  --secondary: oklch(0.93 0.022 80);
+  --secondary-foreground: oklch(0.22 0.03 30);
+  --muted: oklch(0.94 0.018 80);
+  --muted-foreground: oklch(0.44 0.035 45);
+  --accent: oklch(0.55 0.16 45);
+  --accent-foreground: oklch(0.99 0.01 85);
+  --border: oklch(0.5 0.05 45 / 26%);
+  --input: oklch(0.5 0.05 45 / 34%);
+  --ring: var(--vermilion);
+
+  --gradient-gold-text: linear-gradient(100deg, oklch(0.5 0.17 32), oklch(0.62 0.19 45) 45%, oklch(0.55 0.13 70));
+  --gradient-veil: radial-gradient(120% 90% at 50% 0%, oklch(0.63 0.196 41 / 14%), transparent 70%);
+  --shadow-plate: 0 1px 0 0 oklch(1 0 0 / 70%) inset, 0 24px 50px -32px oklch(0.3 0.05 40 / 40%);
+  --glow-marigold: 0 0 0 1px oklch(0.55 0.16 45 / 30%), 0 0 40px -8px oklch(0.55 0.16 45 / 35%);
+  --surface-grad: linear-gradient(160deg, oklch(0.985 0.012 84), oklch(0.945 0.018 80));
 }
 
 @layer base {
@@ -192,6 +223,31 @@
   color: transparent;
 }
 
+@utility skeleton {
+  position: relative;
+  overflow: hidden;
+  background: color-mix(in oklab, var(--muted-foreground) 14%, transparent);
+}
+
+@utility skeleton-sheen {
+  position: relative;
+  overflow: hidden;
+  background: color-mix(in oklab, var(--muted-foreground) 14%, transparent);
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    transform: translateX(-100%);
+    background: linear-gradient(
+      90deg,
+      transparent,
+      color-mix(in oklab, var(--accent) 22%, transparent),
+      transparent
+    );
+    animation: trinetra-shimmer 1.6s ease-in-out infinite;
+  }
+}
+
 @utility eyebrow {
   font-family: var(--font-sans);
   font-size: 0.6875rem;
@@ -202,7 +258,7 @@
 }
 
 @utility surface {
-  background: linear-gradient(160deg, oklch(0.2 0.016 34), oklch(0.155 0.01 28));
+  background: var(--surface-grad);
   border: 1px solid var(--border);
   box-shadow: var(--shadow-plate);
 }
@@ -233,6 +289,12 @@
   to {
     opacity: 1;
     transform: none;
+  }
+}
+
+@keyframes trinetra-shimmer {
+  to {
+    transform: translateX(100%);
   }
 }
 

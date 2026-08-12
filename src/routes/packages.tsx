@@ -9,10 +9,10 @@ import { cn } from "@/lib/utils";
 export const Route = createFileRoute("/packages")({
   head: () => ({
     meta: [
-      { title: "Sponsorship Packages — TRINETRA 2026 (₹70,000 to ₹15 Lakh+)" },
-      { name: "description", content: "Title, Platinum, Gold, Silver, Bronze and Associate sponsorship packages for TRINETRA 2026, with a full deliverable comparison matrix." },
+      { title: "Sponsorship Packages — TRINETRA 2026 (₹3 Lakh to ₹15 Lakh+)" },
+      { name: "description", content: "Title, Platinum, Gold and Silver sponsorship packages for TRINETRA 2026, with a full deliverable comparison matrix." },
       { property: "og:title", content: "TRINETRA 2026 Sponsorship Packages" },
-      { property: "og:description", content: "Six partnership tiers, each with defined on-ground and digital deliverables." },
+      { property: "og:description", content: "Four partnership tiers, each with defined on-ground and digital deliverables." },
     ],
   }),
   component: Packages,
@@ -23,7 +23,7 @@ function Packages() {
 
   return (
     <>
-      <PageHero eyebrow="Page 17 · Inventory" title="Partnership inventory." lede="Six tiers of association. Every deliverable below is taken from the official TRINETRA 2026 sponsorship brochure." />
+      <PageHero eyebrow="Page 17 · Inventory" title="Partnership inventory." lede="Four tiers of association. Every deliverable below is taken from the official TRINETRA 2026 sponsorship brochure." />
 
       <Section>
         <div className="grid gap-px border border-border bg-border lg:grid-cols-3">
@@ -92,7 +92,7 @@ function Packages() {
         </p>
       </Section>
 
-      <CTABand title="Customise a package with CRED." primary={{ label: "Book a meeting", to: "/partner" }} secondary={{ label: "Partnership categories", to: "/categories" }} />
+      <CTABand title="Customise a package with us." primary={{ label: "Book a meeting", to: "/partner" }} secondary={{ label: "Partnership categories", to: "/categories" }} />
     </>
   );
 }

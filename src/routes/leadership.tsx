@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Reveal } from "@/components/Reveal";
+import { PersonCardSkeleton, useSectionReady } from "@/components/Skeleton";
 import { CTABand, PageHero, Section } from "@/components/blocks";
 import { clubs, contacts } from "@/data/site";
 
@@ -20,10 +21,16 @@ export const Route = createFileRoute("/leadership")({
 });
 
 function Leadership() {
+  const ready = useSectionReady(650);
+  const executiveRoles = ["Convenor", "Co-Convenor", "Operations Head", "Technology & R&D Head"];
   const groups = [
     { title: "Faculty guidance", people: contacts.filter((c) => c.role === "Faculty Coordinator") },
-    { title: "Executive leadership", people: contacts.filter((c) => c.role === "Convenor" || c.role === "Co-Convenor" || c.role === "Technology & R&D Head") },
-    { title: "Operations", people: contacts.filter((c) => c.role === "Operations Head") },
+    {
+      title: "Executive leadership",
+      people: executiveRoles
+        .map((r) => contacts.find((c) => c.role === r))
+        .filter((c): c is (typeof contacts)[number] => Boolean(c)),
+    },
     { title: "Sponsorship", people: contacts.filter((c) => c.role === "Sponsorship Head") },
   ];
 
@@ -34,9 +41,11 @@ function Leadership() {
       {groups.map((g, gi) => (
         <Section key={g.title} tone={gi % 2 === 1 ? "raised" : "default"} eyebrow={g.title}>
           <div className="grid gap-px border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
-            {g.people.map((p, i) => (
+            {!ready &&
+              g.people.map((p) => <PersonCardSkeleton key={`s-${p.name}`} />)}
+            {ready && g.people.map((p, i) => (
               <Reveal key={p.name} delay={i * 60} className="bg-background">
-                <div className="h-full p-8">
+                <div className="h-full p-6 sm:p-8">
                   <div className="flex h-40 items-center justify-center border border-dashed border-border text-[10px] font-bold uppercase tracking-[0.22em] text-muted-foreground">
                     Portrait pending upload
                   </div>
@@ -79,7 +88,7 @@ function Leadership() {
         </div>
       </Section>
 
-      <CTABand title="Talk to the sponsorship desk directly." primary={{ label: "Meet CRED", to: "/cred" }} />
+      <CTABand title="Talk to the sponsorship desk directly." primary={{ label: "Book a meeting", to: "/partner" }} />
     </>
   );
 }

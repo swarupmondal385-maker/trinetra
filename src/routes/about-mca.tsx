@@ -71,9 +71,9 @@ function AboutMca() {
 
       <Section eyebrow="Faculty coordinator" title="A message from Team TRINETRA.">
         <Reveal>
-          <blockquote className="surface p-10 md:p-16">
+          <blockquote className="surface p-6 sm:p-10 md:p-16">
             <p className="display text-5xl leading-none text-accent">“</p>
-            <div className="mt-6 space-y-5 font-[family-name:var(--font-serif)] text-xl leading-relaxed text-foreground/90 md:text-2xl">
+            <div className="mt-6 max-w-3xl space-y-6 font-[family-name:var(--font-serif)] text-lg leading-[1.75] text-foreground/90 sm:text-xl sm:leading-[1.8] md:text-2xl md:leading-[1.75]">
               {facultyMessage.body.map((p) => (
                 <p key={p}>{p}</p>
               ))}

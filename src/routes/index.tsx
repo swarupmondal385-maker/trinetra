@@ -30,7 +30,7 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "TRINETRA 2026 — MAKAUT Autumn Fest" },
       {
         property: "og:description",
-        content: "Where Bengal's culture meets the next generation. Explore sponsorship opportunities.",
+        content: "TRINETRA — The Sharod Symphony. Where Bengal's greatest saga awakens on campus.",
       },
     ],
   }),
@@ -53,7 +53,7 @@ function Home() {
         />
         <div className="absolute inset-0 -z-10 bg-[linear-gradient(180deg,oklch(0.13_0.008_25/72%),oklch(0.13_0.008_25/40%)_35%,oklch(0.13_0.008_25/96%))]" />
 
-        <div className="container-x pb-20 pt-40">
+        <div className="container-x pb-14 pt-32 sm:pb-20 sm:pt-40">
           <Reveal>
             <div className="flex items-center gap-4">
               <TrinetraMark className="h-10 w-auto text-accent" animate />
@@ -62,7 +62,7 @@ function Home() {
           </Reveal>
 
           <Reveal delay={120}>
-            <h1 className="display mt-8 text-[3.5rem] leading-[0.86] text-gold-gradient sm:text-[6rem] lg:text-[9rem]">
+            <h1 className="display mt-8 text-[2.75rem] leading-[0.88] text-gold-gradient sm:text-[6rem] lg:text-[9rem]">
               TRINETRA
               <span className="block text-foreground/90">2026</span>
             </h1>
@@ -70,10 +70,10 @@ function Home() {
 
           <div className="mt-10 grid gap-10 lg:grid-cols-[1.2fr_1fr] lg:items-end">
             <Reveal delay={200}>
-              <h2 className="max-w-2xl text-2xl font-extrabold uppercase leading-[1.1] sm:text-4xl">
-                Where Bengal's culture
+              <h2 className="max-w-2xl text-xl font-extrabold uppercase leading-[1.15] sm:text-4xl">
+                TRINETRA — The Sharod Symphony
                 <br />
-                meets the next generation.
+                <span className="text-gold-gradient">Where Bengal's greatest saga awakens on campus.</span>
               </h2>
               <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground">{festival.intro}</p>
               <div className="mt-9 flex flex-wrap gap-3">
@@ -100,7 +100,7 @@ function Home() {
             </Reveal>
 
             <Reveal delay={280}>
-              <dl className="grid grid-cols-2 gap-px border border-border bg-border">
+              <dl className="grid grid-cols-1 gap-px border border-border bg-border sm:grid-cols-2">
                 <div className="bg-background/80 p-6 backdrop-blur">
                   <dt className="eyebrow">Dates</dt>
                   <dd className="mt-3 text-lg font-bold">{festival.dates}</dd>
@@ -109,7 +109,7 @@ function Home() {
                   <dt className="eyebrow">Venue</dt>
                   <dd className="mt-3 text-lg font-bold">MAKAUT, WB Main Campus</dd>
                 </div>
-                <div className="col-span-2 bg-background/80 p-6 backdrop-blur">
+                <div className="bg-background/80 p-6 backdrop-blur sm:col-span-2">
                   <dt className="eyebrow">Organised by</dt>
                   <dd className="mt-3 text-sm text-muted-foreground">
                     MAKAUT Cultural Association (MCA) · CRED — Corporate Relations and Events Department
@@ -138,7 +138,7 @@ function Home() {
                   <span className="w-10 text-[10px] font-bold tracking-[0.2em] text-muted-foreground">
                     0{i + 1}
                   </span>
-                  <span className="display text-3xl uppercase text-foreground/40 transition-colors duration-500 group-hover:text-accent sm:text-6xl lg:text-7xl">
+                  <span className="display text-2xl uppercase text-foreground/40 transition-colors duration-500 group-hover:text-accent sm:text-6xl lg:text-7xl">
                     {word}
                   </span>
                 </div>
@@ -270,7 +270,7 @@ function Home() {
             line: "An iconic name in the Bengali rock scene, live on the TRINETRA main stage.",
           },
         ].map((s) => (
-          <article key={s.name} className="group relative isolate min-h-[70vh] overflow-hidden">
+          <article key={s.name} className="group relative isolate min-h-[60vh] overflow-hidden md:min-h-[70vh]">
             <img
               src={s.img}
               alt={s.name}
@@ -278,9 +278,9 @@ function Home() {
               className="absolute inset-0 -z-10 h-full w-full object-cover transition-transform duration-[1600ms] group-hover:scale-105"
             />
             <div className="absolute inset-0 -z-10 bg-[linear-gradient(180deg,oklch(0.13_0.008_25/40%),oklch(0.13_0.008_25/94%))]" />
-            <div className="flex h-full flex-col justify-end p-10">
+            <div className="flex h-full flex-col justify-end p-6 sm:p-10">
               <p className="eyebrow">Showstopper</p>
-              <h3 className="mt-4 text-3xl font-extrabold uppercase leading-none sm:text-5xl">{s.name}</h3>
+              <h3 className="mt-4 text-2xl font-extrabold uppercase leading-tight sm:text-5xl">{s.name}</h3>
               <p className="mt-4 text-[11px] font-bold uppercase tracking-[0.2em] text-accent">{s.meta}</p>
               <p className="mt-4 max-w-md text-sm text-muted-foreground">{s.line}</p>
               <Link
@@ -351,7 +351,7 @@ function Home() {
       </Section>
 
       {/* ---------- PACKAGE PREVIEW ---------- */}
-      <Section eyebrow="Sponsorship inventory" title="Six ways to partner.">
+      <Section eyebrow="Sponsorship inventory" title="Four ways to partner.">
         <div className="grid gap-px border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
           {packages.map((p, i) => (
             <Reveal key={p.tier} delay={i * 60} className="bg-background">

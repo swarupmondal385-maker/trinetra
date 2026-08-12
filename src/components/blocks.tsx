@@ -22,7 +22,7 @@ export function PageHero({
   children?: ReactNode;
 }) {
   return (
-    <section className="relative isolate overflow-hidden pb-20 pt-40 md:pb-28 md:pt-48">
+    <section className="relative isolate overflow-hidden pb-16 pt-28 sm:pb-20 sm:pt-36 md:pb-28 md:pt-48">
       {image && (
         <>
           <img
@@ -43,7 +43,7 @@ export function PageHero({
         <Reveal delay={80}>
           <h1
             className={cn(
-              "mt-6 max-w-5xl text-4xl font-extrabold uppercase leading-[0.95] sm:text-6xl lg:text-7xl",
+              "mt-5 max-w-5xl text-[2rem] font-extrabold uppercase leading-[1.02] sm:text-5xl md:text-6xl lg:text-7xl",
               align === "center" && "mx-auto",
             )}
           >
@@ -54,7 +54,7 @@ export function PageHero({
           <Reveal delay={160}>
             <p
               className={cn(
-                "mt-8 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg",
+                "mt-6 max-w-2xl text-[0.95rem] leading-relaxed text-muted-foreground md:text-lg",
                 align === "center" && "mx-auto",
               )}
             >
@@ -86,7 +86,7 @@ export function Section({
   return (
     <section
       className={cn(
-        "relative py-20 md:py-28",
+        "relative py-14 sm:py-20 md:py-28",
         tone === "raised" && "border-y border-border bg-card/40",
         className,
       )}
@@ -101,7 +101,7 @@ export function Section({
             )}
             {title && (
               <Reveal delay={60}>
-                <h2 className="mt-5 text-3xl font-extrabold uppercase leading-[1.05] sm:text-4xl lg:text-5xl">
+                <h2 className="mt-4 text-2xl font-extrabold uppercase leading-[1.1] sm:text-4xl lg:text-5xl">
                   {title}
                 </h2>
               </Reveal>
@@ -113,7 +113,7 @@ export function Section({
             )}
           </div>
         )}
-        {children && <div className={cn(title || eyebrow ? "mt-14" : "")}>{children}</div>}
+        {children && <div className={cn(title || eyebrow ? "mt-10 md:mt-14" : "")}>{children}</div>}
       </div>
     </section>
   );
@@ -129,8 +129,8 @@ export function StatGrid({ items, columns = 4 }: { items: Metric[]; columns?: 3 
     >
       {items.map((m, i) => (
         <Reveal key={m.label} delay={i * 60} className="bg-background">
-          <div className="group h-full p-8 transition-colors duration-500 hover:bg-card">
-            <p className="display text-4xl text-gold-gradient lg:text-5xl">
+          <div className="group h-full p-6 transition-colors duration-500 hover:bg-card sm:p-8">
+            <p className="display text-3xl text-gold-gradient sm:text-4xl lg:text-5xl">
               <CountUp value={m.value} />
             </p>
             <p className="mt-4 text-sm font-semibold uppercase tracking-[0.14em] text-foreground">{m.label}</p>
@@ -156,12 +156,12 @@ export function CTABand({
   secondary?: { label: string; to: string };
 }) {
   return (
-    <section className="relative isolate overflow-hidden border-y border-border py-24 md:py-32">
+    <section className="relative isolate overflow-hidden border-y border-border py-16 sm:py-24 md:py-32">
       <div className="ember-veil absolute inset-0 -z-10 animate-glow" />
       <div className="alpona absolute inset-0 -z-10 opacity-50" />
       <div className="container-x text-center">
         <Reveal>
-          <h2 className="mx-auto max-w-4xl text-3xl font-extrabold uppercase leading-[1.05] sm:text-5xl lg:text-6xl">
+          <h2 className="mx-auto max-w-4xl text-2xl font-extrabold uppercase leading-[1.1] sm:text-4xl md:text-5xl lg:text-6xl">
             {title}
           </h2>
         </Reveal>
@@ -174,14 +174,14 @@ export function CTABand({
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
             <Link
               to={primary.to}
-              className="group inline-flex items-center gap-2 bg-accent px-8 py-4 text-[11px] font-bold uppercase tracking-[0.2em] text-accent-foreground transition-all duration-300 hover:shadow-[var(--glow-marigold)]"
+              className="group inline-flex w-full items-center justify-center gap-2 bg-accent px-6 py-4 sm:w-auto sm:px-8 text-[11px] font-bold uppercase tracking-[0.2em] text-accent-foreground transition-all duration-300 hover:shadow-[var(--glow-marigold)]"
             >
               {primary.label}
               <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
             <Link
               to={secondary.to}
-              className="inline-flex items-center gap-2 border border-border px-8 py-4 text-[11px] font-bold uppercase tracking-[0.2em] text-foreground transition-colors duration-300 hover:border-accent hover:text-accent"
+              className="inline-flex w-full items-center justify-center gap-2 border border-border px-6 py-4 text-[11px] font-bold uppercase tracking-[0.2em] text-foreground sm:w-auto sm:px-8 transition-colors duration-300 hover:border-accent hover:text-accent"
             >
               {secondary.label}
             </Link>
@@ -200,7 +200,7 @@ export function Marquee({ items }: { items: string[] }) {
         {doubled.map((t, i) => (
           <span
             key={`${t}-${i}`}
-            className="display whitespace-nowrap text-2xl uppercase text-foreground/25 md:text-4xl"
+            className="display whitespace-nowrap text-xl uppercase text-foreground/25 sm:text-2xl md:text-4xl"
           >
             {t}
             <span className="ml-16 text-accent">✦</span>

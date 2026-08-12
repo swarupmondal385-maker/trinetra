@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Menu, X, ChevronRight } from "lucide-react";
 import { navGroups } from "@/data/nav";
 import { TrinetraMark } from "./TrinetraMark";
+import { ThemeToggle } from "./ThemeToggle";
 import { cn } from "@/lib/utils";
 
 export function SiteNav() {
@@ -37,12 +38,12 @@ export function SiteNav() {
           scrolled ? "bg-background/85 backdrop-blur-xl" : "bg-transparent",
         )}
       >
-        <div className="container-x flex h-20 items-center justify-between gap-6">
+        <div className="container-x flex h-16 items-center justify-between gap-4 md:h-20 md:gap-6">
           <Link to="/" className="group flex items-center gap-3" onClick={() => setOpen(false)}>
             <TrinetraMark className="h-7 w-auto text-accent transition-transform duration-500 group-hover:scale-110" />
             <span className="leading-none">
-              <span className="display block text-lg tracking-[0.18em] text-foreground">TRINETRA</span>
-              <span className="mt-1 block text-[9px] font-bold uppercase tracking-[0.34em] text-muted-foreground">
+              <span className="display block text-base tracking-[0.18em] text-foreground sm:text-lg">TRINETRA</span>
+              <span className="mt-1 hidden text-[9px] font-bold uppercase tracking-[0.34em] text-muted-foreground sm:block">
                 MAKAUT Autumn Fest 2026
               </span>
             </span>
@@ -75,7 +76,8 @@ export function SiteNav() {
             ))}
           </nav>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3">
+            <ThemeToggle />
             <Link
               to="/partner"
               className="hidden rounded-sm border border-accent/60 px-5 py-2.5 text-[11px] font-bold uppercase tracking-[0.2em] text-accent transition-all duration-300 hover:bg-accent hover:text-accent-foreground sm:inline-block"
@@ -106,8 +108,8 @@ export function SiteNav() {
           open ? "visible opacity-100" : "invisible opacity-0",
         )}
       >
-        <div className="alpona ember-veil min-h-full pb-24 pt-28">
-          <div className="container-x grid gap-10 md:grid-cols-2 xl:grid-cols-3">
+        <div className="alpona ember-veil min-h-full pb-24 pt-24 md:pt-28">
+          <div className="container-x grid gap-8 sm:gap-10 md:grid-cols-2 xl:grid-cols-3">
             <div className="xl:col-span-1">
               <p className="eyebrow">Navigate</p>
               <p className="display mt-4 text-4xl text-gold-gradient">TRINETRA 2026</p>
