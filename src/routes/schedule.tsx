@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
+import { ScheduleSkeleton, useSectionReady } from "@/components/Skeleton";
 import { CTABand, PageHero, Section } from "@/components/blocks";
 import { schedule } from "@/data/site";
 import { cn } from "@/lib/utils";
@@ -24,6 +25,7 @@ export const Route = createFileRoute("/schedule")({
 
 function Schedule() {
   const [open, setOpen] = useState<string | null>("BODHAN");
+  const ready = useSectionReady(650);
 
   return (
     <>
@@ -41,7 +43,8 @@ function Schedule() {
 
       {schedule.map((day, di) => (
         <Section key={day.day} tone={di % 2 === 1 ? "raised" : "default"} eyebrow={day.date} title={day.day}>
-          <div className="border border-border">
+          {!ready && <ScheduleSkeleton />}
+          <div className={cn("border border-border", !ready && "hidden")}>
             {day.items.map((it) => {
               const isOpen = open === it.code;
               return (
@@ -49,13 +52,13 @@ function Schedule() {
                   <button
                     onClick={() => setOpen(isOpen ? null : it.code)}
                     aria-expanded={isOpen}
-                    className="flex w-full items-center gap-6 p-6 text-left transition-colors hover:bg-card md:p-8"
+                    className="flex w-full items-center gap-4 p-5 text-left transition-colors hover:bg-card sm:gap-6 sm:p-6 md:p-8"
                   >
-                    <span className="w-24 shrink-0 text-[11px] font-bold uppercase tracking-[0.18em] text-accent">
+                    <span className="w-16 shrink-0 text-[10px] font-bold uppercase tracking-[0.14em] text-accent sm:w-24 sm:text-[11px] sm:tracking-[0.18em]">
                       {it.time}
                     </span>
                     <span className="flex-1">
-                      <span className="block text-xl font-extrabold uppercase tracking-[0.1em] md:text-3xl">
+                      <span className="block text-lg font-extrabold uppercase tracking-[0.1em] sm:text-xl md:text-3xl">
                         {it.code}
                       </span>
                       <span className="mt-1 block text-sm text-muted-foreground">{it.title}</span>
