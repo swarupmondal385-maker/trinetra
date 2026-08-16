@@ -1,15 +1,17 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
 import { toast } from "sonner";
+import { useServerFn } from "@tanstack/react-start";
 import { Reveal } from "@/components/Reveal";
 import { PageHero, Section } from "@/components/blocks";
 import { contacts, packages, partnershipCategories } from "@/data/site";
+import { submitSponsorEnquiry } from "@/lib/sponsor-enquiries.functions";
 
 export const Route = createFileRoute("/partner")({
   head: () => ({
     meta: [
       { title: "Partner With Us — Book a TRINETRA 2026 Sponsorship Meeting" },
-      { name: "description", content: "Request a partnership meeting with CRED, the Corporate Relations and Events Department behind TRINETRA 2026, and reach the official contacts directly." },
+      { name: "description", content: "Request a partnership meeting with the Corporate Relations team behind TRINETRA 2026, and reach the official contacts directly." },
       { property: "og:title", content: "Partner With TRINETRA 2026" },
       { property: "og:description", content: "Let's build a partnership that the audience remembers." },
     ],
@@ -21,16 +23,49 @@ const field = "w-full border border-input bg-transparent px-4 py-3 text-sm outli
 
 function Partner() {
   const [sent, setSent] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const submit = useServerFn(submitSponsorEnquiry);
 
-  const onSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSent(true);
-    toast.success("Thank you. The TRINETRA Corporate Relations team will review your enquiry.");
+    if (submitting) return;
+    const form = e.currentTarget;
+    const fd = new FormData(form);
+    const value = (key: string) => String(fd.get(key) ?? "").trim();
+
+    setSubmitting(true);
+    try {
+      await submit({
+        data: {
+          name: value("name"),
+          designation: value("designation"),
+          company: value("company"),
+          email: value("email"),
+          phone: value("phone"),
+          website: value("website"),
+          industry: value("industry"),
+          budget: value("budget"),
+          package: value("package"),
+          category: value("category"),
+          objective: value("objective"),
+          meeting: value("meeting"),
+          message: value("message"),
+        },
+      });
+      setSent(true);
+      toast.success("Thank you. The TRINETRA Corporate Relations team will review your enquiry.");
+    } catch (err) {
+      console.error(err);
+      toast.error(err instanceof Error ? err.message : "Something went wrong. Please try again.");
+    } finally {
+      setSubmitting(false);
+    }
   };
+
 
   return (
     <>
-      <PageHero eyebrow="Page 20 · Partner with us" title={<>Let's build a partnership<br />that the audience remembers.</>} lede="Tell us what your brand wants to achieve and CRED will come back with a tailored inventory." />
+      <PageHero eyebrow="Page 20 · Partner with us" title={<>Let's build a partnership<br />that the audience remembers.</>} lede="Tell us what your brand wants to achieve and our Corporate Relations team will come back with a tailored inventory." />
 
       <Section>
         <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr]">
@@ -89,13 +124,16 @@ function Partner() {
 
                 <button
                   type="submit"
-                  className="sm:col-span-2 bg-accent px-8 py-4 text-[11px] font-bold uppercase tracking-[0.2em] text-accent-foreground transition-shadow hover:shadow-[var(--glow-marigold)]"
+                  disabled={submitting}
+                  className="sm:col-span-2 bg-accent px-8 py-4 text-[11px] font-bold uppercase tracking-[0.2em] text-accent-foreground transition-shadow hover:shadow-[var(--glow-marigold)] disabled:cursor-not-allowed disabled:opacity-60"
                 >
-                  Request a partnership meeting
+                  {submitting ? "Sending…" : "Request a partnership meeting"}
                 </button>
                 <p className="sm:col-span-2 text-xs text-muted-foreground">
-                  Enquiries are reviewed by CRED. Brand brief uploads and stored lead tracking can be enabled with a backend.
+                  Every enquiry is stored securely and reviewed by the TRINETRA Corporate Relations team.
                 </p>
+
+
               </form>
             )}
           </Reveal>
