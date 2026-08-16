@@ -194,21 +194,23 @@ function Home() {
           className="pointer-events-none absolute inset-0 -z-20 h-full w-full select-none bg-black object-cover"
         />
         <div className="pointer-events-none absolute inset-0 -z-10 bg-[var(--gradient-hero)]" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 -z-10 h-2/3 bg-[linear-gradient(180deg,transparent,oklch(0.1_0.008_25/88%))]" />
 
         <div className="container-x pb-10 sm:pb-16">
           <Reveal>
-            <p className="eyebrow">The opening film</p>
+            <p className="eyebrow drop-shadow-[0_2px_10px_oklch(0_0_0/70%)]">The opening film</p>
           </Reveal>
           <div className="mt-5 flex flex-wrap gap-x-5 gap-y-2 sm:mt-8 sm:gap-x-8">
             {montage.map((word, i) => (
               <Reveal key={word} delay={i * 70}>
-                <span className="display text-base uppercase text-foreground/45 transition-colors duration-500 hover:text-accent sm:text-3xl lg:text-4xl">
+                <span className="display text-base uppercase text-foreground/85 drop-shadow-[0_2px_14px_oklch(0_0_0/80%)] transition-colors duration-500 hover:text-accent sm:text-3xl lg:text-4xl">
                   {word}
                 </span>
               </Reveal>
             ))}
           </div>
         </div>
+
       </section>
 
 
