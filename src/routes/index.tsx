@@ -318,7 +318,10 @@ function Home() {
             line: "An iconic name in the Bengali rock scene, live on the TRINETRA main stage.",
           },
         ].map((s) => (
-          <article key={s.name} className="group relative isolate min-h-[60vh] overflow-hidden md:min-h-[70vh]">
+          <article
+            key={s.name}
+            className="media-dark group relative isolate min-h-[52vh] overflow-hidden sm:min-h-[60vh] md:min-h-[70vh]"
+          >
             <img
               src={s.img}
               alt={s.name}
