@@ -135,15 +135,18 @@ export function StatGrid({ items, columns = 4 }: { items: Metric[]; columns?: 3 
     >
       {items.map((m, i) => (
         <Reveal key={m.label} delay={i * 60} className="bg-background">
-          <div className="group h-full p-6 transition-colors duration-500 hover:bg-card sm:p-8">
-            <p className="display text-3xl text-gold-gradient sm:text-4xl lg:text-5xl">
+          <div className="group h-full p-5 transition-colors duration-500 hover:bg-card sm:p-8">
+            <p className="display text-2xl text-gold-gradient sm:text-4xl lg:text-5xl">
               <CountUp value={m.value} />
             </p>
-            <p className="mt-4 text-sm font-semibold uppercase tracking-[0.14em] text-foreground">{m.label}</p>
-            <p className="mt-3 text-[10px] font-bold uppercase tracking-[0.22em] text-muted-foreground">
+            <p className="mt-3 text-xs font-semibold uppercase tracking-[0.14em] text-foreground sm:mt-4 sm:text-sm">
+              {m.label}
+            </p>
+            <p className="mt-2 text-[9px] font-bold uppercase tracking-[0.22em] text-muted-foreground sm:mt-3 sm:text-[10px]">
               {m.status}
             </p>
           </div>
+
         </Reveal>
       ))}
     </div>
