@@ -14,7 +14,63 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      sponsor_enquiries: {
+        Row: {
+          budget: string | null
+          category: string | null
+          company: string
+          created_at: string
+          designation: string | null
+          email: string
+          id: string
+          industry: string | null
+          meeting: string | null
+          message: string | null
+          name: string
+          objective: string | null
+          package: string | null
+          phone: string | null
+          status: string
+          website: string | null
+        }
+        Insert: {
+          budget?: string | null
+          category?: string | null
+          company: string
+          created_at?: string
+          designation?: string | null
+          email: string
+          id?: string
+          industry?: string | null
+          meeting?: string | null
+          message?: string | null
+          name: string
+          objective?: string | null
+          package?: string | null
+          phone?: string | null
+          status?: string
+          website?: string | null
+        }
+        Update: {
+          budget?: string | null
+          category?: string | null
+          company?: string
+          created_at?: string
+          designation?: string | null
+          email?: string
+          id?: string
+          industry?: string | null
+          meeting?: string | null
+          message?: string | null
+          name?: string
+          objective?: string | null
+          package?: string | null
+          phone?: string | null
+          status?: string
+          website?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
