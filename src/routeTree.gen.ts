@@ -26,6 +26,7 @@ import { Route as PartnerRouteImport } from './routes/partner'
 import { Route as PreviousSponsorsRouteImport } from './routes/previous-sponsors'
 import { Route as ProofRouteImport } from './routes/proof'
 import { Route as ScheduleRouteImport } from './routes/schedule'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as StoryRouteImport } from './routes/story'
 import { Route as WhySponsorRouteImport } from './routes/why-sponsor'
 
@@ -114,6 +115,11 @@ const ScheduleRoute = ScheduleRouteImport.update({
   path: '/schedule',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const StoryRoute = StoryRouteImport.update({
   id: '/story',
   path: '/story',
@@ -143,6 +149,7 @@ export interface FileRoutesByFullPath {
   '/previous-sponsors': typeof PreviousSponsorsRoute
   '/proof': typeof ProofRoute
   '/schedule': typeof ScheduleRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/story': typeof StoryRoute
   '/why-sponsor': typeof WhySponsorRoute
 }
@@ -164,6 +171,7 @@ export interface FileRoutesByTo {
   '/previous-sponsors': typeof PreviousSponsorsRoute
   '/proof': typeof ProofRoute
   '/schedule': typeof ScheduleRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/story': typeof StoryRoute
   '/why-sponsor': typeof WhySponsorRoute
 }
@@ -186,6 +194,7 @@ export interface FileRoutesById {
   '/previous-sponsors': typeof PreviousSponsorsRoute
   '/proof': typeof ProofRoute
   '/schedule': typeof ScheduleRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/story': typeof StoryRoute
   '/why-sponsor': typeof WhySponsorRoute
 }
@@ -209,6 +218,7 @@ export interface FileRouteTypes {
     | '/previous-sponsors'
     | '/proof'
     | '/schedule'
+    | '/sitemap.xml'
     | '/story'
     | '/why-sponsor'
   fileRoutesByTo: FileRoutesByTo
@@ -230,6 +240,7 @@ export interface FileRouteTypes {
     | '/previous-sponsors'
     | '/proof'
     | '/schedule'
+    | '/sitemap.xml'
     | '/story'
     | '/why-sponsor'
   id:
@@ -251,6 +262,7 @@ export interface FileRouteTypes {
     | '/previous-sponsors'
     | '/proof'
     | '/schedule'
+    | '/sitemap.xml'
     | '/story'
     | '/why-sponsor'
   fileRoutesById: FileRoutesById
@@ -273,6 +285,7 @@ export interface RootRouteChildren {
   PreviousSponsorsRoute: typeof PreviousSponsorsRoute
   ProofRoute: typeof ProofRoute
   ScheduleRoute: typeof ScheduleRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   StoryRoute: typeof StoryRoute
   WhySponsorRoute: typeof WhySponsorRoute
 }
@@ -398,6 +411,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ScheduleRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/story': {
       id: '/story'
       path: '/story'
@@ -433,6 +453,7 @@ const rootRouteChildren: RootRouteChildren = {
   PreviousSponsorsRoute: PreviousSponsorsRoute,
   ProofRoute: ProofRoute,
   ScheduleRoute: ScheduleRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   StoryRoute: StoryRoute,
   WhySponsorRoute: WhySponsorRoute,
 }

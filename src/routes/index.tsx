@@ -32,8 +32,47 @@ export const Route = createFileRoute("/")({
         property: "og:description",
         content: "TRINETRA — The Sharod Symphony. Where Bengal's greatest saga awakens on campus.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:url", content: "https://mcamsv.com/" },
+    ],
+    links: [{ rel: "canonical", href: "https://mcamsv.com/" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Event",
+          name: "TRINETRA 2026",
+          alternateName: "TRINETRA 2026 — MAKAUT Autumn Fest",
+          description:
+            "TRINETRA 2026, MAKAUT's Autumn Fest — a two-day cultural festival on 24–25 September 2026 at the MAKAUT Main Campus, Haringhata.",
+          startDate: "2026-09-24",
+          endDate: "2026-09-25",
+          eventStatus: "https://schema.org/EventScheduled",
+          eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+          location: {
+            "@type": "Place",
+            name: "MAKAUT Main Campus, Haringhata",
+            address: {
+              "@type": "PostalAddress",
+              streetAddress: "MAKAUT Main Campus, Haringhata",
+              addressLocality: "Haringhata",
+              addressRegion: "West Bengal",
+              addressCountry: "IN",
+            },
+          },
+          organizer: {
+            "@type": "Organization",
+            name: "MAKAUT Cultural Association",
+            url: "https://mcamsv.com/",
+          },
+          url: "https://mcamsv.com/",
+        }),
+      },
     ],
   }),
+
   component: Home,
 });
 
