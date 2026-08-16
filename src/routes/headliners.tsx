@@ -61,17 +61,27 @@ function Headliners() {
       {acts.map((a, i) => (
         <section key={a.name} className="border-t border-border">
           <div className={`grid lg:grid-cols-2 ${i % 2 ? "lg:[direction:rtl]" : ""}`}>
-            <div className="relative min-h-[50vh] overflow-hidden">
-              <img src={a.img} alt={a.name} loading="lazy" className="absolute inset-0 h-full w-full object-cover" />
+            <div className="group relative min-h-[36vh] overflow-hidden sm:min-h-[50vh]">
+              <img
+                src={a.img}
+                alt={a.name}
+                loading="lazy"
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-[1400ms] group-hover:scale-105"
+              />
               <div className="absolute inset-0 bg-[linear-gradient(180deg,oklch(0.13_0.008_25/20%),oklch(0.13_0.008_25/70%))]" />
             </div>
             <div className="[direction:ltr]">
               <Reveal>
-                <div className="p-10 md:p-16">
+                <div className="p-6 sm:p-10 md:p-16">
                   <p className="eyebrow">Highlight {String(i + 1).padStart(2, "0")}</p>
-                  <h2 className="mt-5 text-3xl font-extrabold uppercase leading-none sm:text-5xl">{a.name}</h2>
-                  <p className="mt-4 text-[11px] font-bold uppercase tracking-[0.18em] text-accent">{a.meta}</p>
-                  <p className="mt-6 max-w-xl text-sm leading-relaxed text-muted-foreground">{a.body}</p>
+                  <h2 className="mt-4 text-2xl font-extrabold uppercase leading-none sm:mt-5 sm:text-5xl">
+                    {a.name}
+                  </h2>
+                  <p className="mt-4 text-[10px] font-bold uppercase tracking-[0.18em] text-accent sm:text-[11px]">
+                    {a.meta}
+                  </p>
+                  <p className="mt-5 max-w-xl text-sm leading-relaxed text-muted-foreground sm:mt-6">{a.body}</p>
+
                   <div className="mt-8 border-t border-border pt-6">
                     <p className="eyebrow">Sponsor opportunity</p>
                     <p className="mt-3 max-w-xl text-sm text-muted-foreground">{a.sponsor}</p>
