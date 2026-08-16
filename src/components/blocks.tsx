@@ -183,7 +183,7 @@ export function CTABand({
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
             <Link
               to={primary.to}
-              className="group inline-flex w-full items-center justify-center gap-2 bg-accent px-6 py-4 sm:w-auto sm:px-8 text-[11px] font-bold uppercase tracking-[0.2em] text-accent-foreground transition-all duration-300 hover:shadow-[var(--glow-marigold)]"
+              className="group sheen inline-flex w-full items-center justify-center gap-2 bg-accent px-6 py-4 sm:w-auto sm:px-8 text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.2em] text-accent-foreground transition-all duration-300 hover:shadow-[var(--glow-marigold)]"
             >
               {primary.label}
               <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
