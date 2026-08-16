@@ -65,7 +65,7 @@ function Partner() {
 
   return (
     <>
-      <PageHero eyebrow="Page 20 · Partner with us" title={<>Let's build a partnership<br />that the audience remembers.</>} lede="Tell us what your brand wants to achieve and CRED will come back with a tailored inventory." />
+      <PageHero eyebrow="Page 20 · Partner with us" title={<>Let's build a partnership<br />that the audience remembers.</>} lede="Tell us what your brand wants to achieve and our Corporate Relations team will come back with a tailored inventory." />
 
       <Section>
         <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr]">
