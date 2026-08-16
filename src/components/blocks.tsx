@@ -22,20 +22,26 @@ export function PageHero({
   children?: ReactNode;
 }) {
   return (
-    <section className="relative isolate overflow-hidden pb-16 pt-28 sm:pb-20 sm:pt-36 md:pb-28 md:pt-48">
+    <section
+      className={cn(
+        "relative isolate overflow-hidden pb-14 pt-24 sm:pb-20 sm:pt-36 md:pb-28 md:pt-48",
+        image && "media-dark",
+      )}
+    >
       {image && (
         <>
           <img
             src={image}
             alt=""
             aria-hidden="true"
-            className="absolute inset-0 -z-20 h-full w-full object-cover opacity-35"
+            className="animate-ken-burns absolute inset-0 -z-20 h-full w-full object-cover opacity-45"
           />
           <div className="absolute inset-0 -z-10 bg-[linear-gradient(180deg,oklch(0.13_0.008_25/85%),oklch(0.13_0.008_25/96%))]" />
         </>
       )}
       {!image && <div className="ember-veil absolute inset-0 -z-10" />}
       <div className="alpona absolute inset-0 -z-10 opacity-40" />
+
       <div className={cn("container-x", align === "center" && "text-center")}>
         <Reveal>
           <p className="eyebrow">{eyebrow}</p>
