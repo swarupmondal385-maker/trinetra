@@ -124,13 +124,14 @@ function Partner() {
 
                 <button
                   type="submit"
-                  className="sm:col-span-2 bg-accent px-8 py-4 text-[11px] font-bold uppercase tracking-[0.2em] text-accent-foreground transition-shadow hover:shadow-[var(--glow-marigold)]"
+                  disabled={submitting}
+                  className="sm:col-span-2 bg-accent px-8 py-4 text-[11px] font-bold uppercase tracking-[0.2em] text-accent-foreground transition-shadow hover:shadow-[var(--glow-marigold)] disabled:cursor-not-allowed disabled:opacity-60"
                 >
-                  Request a partnership meeting
+                  {submitting ? "Sending…" : "Request a partnership meeting"}
                 </button>
                 <p className="sm:col-span-2 text-xs text-muted-foreground">
-                  Enquiries are reviewed by CRED. Brand brief uploads and stored lead tracking can be enabled with a backend.
-                </p>
+                  Every enquiry is stored securely and reviewed by the TRINETRA Corporate Relations team.
+
               </form>
             )}
           </Reveal>
