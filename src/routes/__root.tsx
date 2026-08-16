@@ -13,6 +13,7 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SiteNav } from "../components/SiteNav";
 import { SiteFooter } from "../components/SiteFooter";
+import { ScrollProgress } from "../components/ScrollProgress";
 import { Toaster } from "../components/ui/sonner";
 import { themeInitScript } from "../components/ThemeToggle";
 
