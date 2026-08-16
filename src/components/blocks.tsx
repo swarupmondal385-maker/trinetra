@@ -247,21 +247,27 @@ export function PhotoProof({
   className?: string;
 }) {
   return (
-    <figure className={cn("group relative overflow-hidden border border-border", className)}>
+    <figure
+      className={cn(
+        "media-dark group relative overflow-hidden border border-border hover-lift",
+        className,
+      )}
+    >
       <img
         src={image}
         alt={caption ?? event}
         loading="lazy"
         className="h-full w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-105"
       />
-      <figcaption className="absolute inset-x-0 bottom-0 bg-[var(--gradient-night)] p-6">
-        <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-accent">
+      <figcaption className="absolute inset-x-0 bottom-0 bg-[linear-gradient(180deg,transparent,oklch(0.13_0.008_25/92%))] p-4 sm:p-6">
+        <p className="text-[9px] font-bold uppercase tracking-[0.24em] text-accent sm:text-[10px]">
           {category ? `${category} · ` : ""}
           {year}
         </p>
-        <p className="mt-2 text-sm font-semibold text-foreground">{event}</p>
-        {caption && <p className="mt-1 text-xs text-muted-foreground">{caption}</p>}
+        <p className="mt-1.5 text-xs font-semibold text-foreground sm:mt-2 sm:text-sm">{event}</p>
+        {caption && <p className="mt-1 text-[11px] text-muted-foreground sm:text-xs">{caption}</p>}
       </figcaption>
     </figure>
+
   );
 }
