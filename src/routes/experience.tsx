@@ -49,6 +49,7 @@ function Experience() {
             onClick={() => setSponsorLens((v) => !v)}
             role="switch"
             aria-checked={sponsorLens}
+            aria-label="Toggle sponsor lens"
             className={cn(
               "relative h-9 w-20 border transition-colors duration-300",
               sponsorLens ? "border-accent bg-accent/15" : "border-border bg-secondary",

@@ -45,34 +45,48 @@ function Partner() {
               </div>
             ) : (
               <form onSubmit={onSubmit} className="grid gap-5 sm:grid-cols-2">
-                <input required name="name" placeholder="Your name" className={field} />
-                <input name="designation" placeholder="Designation" className={field} />
-                <input required name="company" placeholder="Company" className={field} />
-                <input required type="email" name="email" placeholder="Work email" className={field} />
-                <input name="phone" placeholder="Phone" className={field} />
-                <input name="website" placeholder="Company website" className={field} />
-                <input name="industry" placeholder="Industry" className={field} />
-                <input name="budget" placeholder="Budget range" className={field} />
-                <select name="package" className={field} defaultValue="">
+                <label htmlFor="pf-name" className="sr-only">Your name</label>
+                <input id="pf-name" required name="name" placeholder="Your name" className={field} />
+                <label htmlFor="pf-designation" className="sr-only">Designation</label>
+                <input id="pf-designation" name="designation" placeholder="Designation" className={field} />
+                <label htmlFor="pf-company" className="sr-only">Company</label>
+                <input id="pf-company" required name="company" placeholder="Company" className={field} />
+                <label htmlFor="pf-email" className="sr-only">Work email</label>
+                <input id="pf-email" required type="email" name="email" placeholder="Work email" className={field} />
+                <label htmlFor="pf-phone" className="sr-only">Phone</label>
+                <input id="pf-phone" name="phone" placeholder="Phone" className={field} />
+                <label htmlFor="pf-website" className="sr-only">Company website</label>
+                <input id="pf-website" name="website" placeholder="Company website" className={field} />
+                <label htmlFor="pf-industry" className="sr-only">Industry</label>
+                <input id="pf-industry" name="industry" placeholder="Industry" className={field} />
+                <label htmlFor="pf-budget" className="sr-only">Budget range</label>
+                <input id="pf-budget" name="budget" placeholder="Budget range" className={field} />
+                <label htmlFor="pf-package" className="sr-only">Preferred sponsorship package</label>
+                <select id="pf-package" name="package" className={field} defaultValue="">
                   <option value="" disabled>Preferred sponsorship package</option>
                   {packages.map((p) => (
                     <option key={p.tier} value={p.tier}>{p.tier} — {p.price}</option>
                   ))}
                 </select>
-                <select name="category" className={field} defaultValue="">
+                <label htmlFor="pf-category" className="sr-only">Preferred partnership category</label>
+                <select id="pf-category" name="category" className={field} defaultValue="">
                   <option value="" disabled>Preferred partnership category</option>
                   {partnershipCategories.map((c) => (
                     <option key={c.name} value={c.name}>{c.name}</option>
                   ))}
                 </select>
-                <input name="objective" placeholder="Primary objective" className={`${field} sm:col-span-2`} />
-                <select name="meeting" className={`${field} sm:col-span-2`} defaultValue="">
+                <label htmlFor="pf-objective" className="sr-only">Primary objective</label>
+                <input id="pf-objective" name="objective" placeholder="Primary objective" className={`${field} sm:col-span-2`} />
+                <label htmlFor="pf-meeting" className="sr-only">Preferred meeting type</label>
+                <select id="pf-meeting" name="meeting" className={`${field} sm:col-span-2`} defaultValue="">
                   <option value="" disabled>Preferred meeting type</option>
                   <option>Online</option>
                   <option>Physical</option>
                   <option>Phone</option>
                 </select>
-                <textarea name="message" rows={5} placeholder="Message" className={`${field} sm:col-span-2`} />
+                <label htmlFor="pf-message" className="sr-only">Message</label>
+                <textarea id="pf-message" name="message" rows={5} placeholder="Message" className={`${field} sm:col-span-2`} />
+
                 <button
                   type="submit"
                   className="sm:col-span-2 bg-accent px-8 py-4 text-[11px] font-bold uppercase tracking-[0.2em] text-accent-foreground transition-shadow hover:shadow-[var(--glow-marigold)]"
