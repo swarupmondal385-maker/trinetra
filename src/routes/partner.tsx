@@ -131,6 +131,8 @@ function Partner() {
                 </button>
                 <p className="sm:col-span-2 text-xs text-muted-foreground">
                   Every enquiry is stored securely and reviewed by the TRINETRA Corporate Relations team.
+                </p>
+
 
               </form>
             )}
