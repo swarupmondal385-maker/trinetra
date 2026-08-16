@@ -22,7 +22,13 @@ export const Route = createFileRoute("/leadership")({
 
 function Leadership() {
   const ready = useSectionReady(650);
-  const executiveRoles = ["Convenor", "Co-Convenor", "Operations Head", "Technology & R&D Head"];
+  const executiveRoles = [
+    "Executive Head",
+    "Executive Co-Head",
+    "Deputy Executive Head",
+    "Operations Head",
+    "Technology & R&D Head",
+  ];
   const groups = [
     { title: "Faculty guidance", people: contacts.filter((c) => c.role === "Faculty Coordinator") },
     {
