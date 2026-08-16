@@ -171,44 +171,46 @@ function Home() {
       </section>
 
       {/* ---------- OPENING FILM ---------- */}
-      <section className="relative overflow-hidden border-y border-border py-24 md:py-32">
+      <section className="relative overflow-hidden border-y border-border py-16 sm:py-24 md:py-32">
         <div className="ember-veil absolute inset-0 -z-10" />
         <div className="container-x">
-          <p className="eyebrow">The opening film</p>
-          <ul className="mt-10 space-y-2">
+          <Reveal>
+            <p className="eyebrow">The opening film</p>
+            <h2 className="display mt-4 text-2xl leading-[0.95] text-gold-gradient sm:text-5xl lg:text-6xl">
+              TRINETRA in motion
+            </h2>
+          </Reveal>
+
+          <Reveal delay={120}>
+            <figure className="group relative mt-8 overflow-hidden border border-border sm:mt-12">
+              <video
+                src={openingFilm.url}
+                poster={openingFilmPoster.url}
+                controls
+                playsInline
+                muted
+                loop
+                autoPlay
+                preload="metadata"
+                aria-label="TRINETRA 2026 opening film"
+                className="aspect-video w-full bg-black object-cover"
+              />
+              <figcaption className="sr-only">TRINETRA 2026 opening film</figcaption>
+            </figure>
+          </Reveal>
+
+          <div className="mt-10 flex flex-wrap gap-x-6 gap-y-3 sm:mt-12">
             {montage.map((word, i) => (
-              <Reveal as="li" key={word} delay={i * 90}>
-                <div className="group flex items-baseline gap-6 border-b border-border/60 py-4">
-                  <span className="w-10 text-[10px] font-bold tracking-[0.2em] text-muted-foreground">
-                    0{i + 1}
-                  </span>
-                  <span className="display text-2xl uppercase text-foreground/40 transition-colors duration-500 group-hover:text-accent sm:text-6xl lg:text-7xl">
-                    {word}
-                  </span>
-                </div>
-              </Reveal>
-            ))}
-          </ul>
-          <div className="mt-14 grid gap-4 md:grid-cols-3">
-            {[
-              { src: dhaki, alt: "Bengali dhaki drummers performing under red festival light" },
-              { src: danceTroupe, alt: "Dance troupe mid-leap in colourful costumes on stage" },
-              { src: campus, alt: "MAKAUT-style university campus at golden hour" },
-            ].map((img, i) => (
-              <Reveal key={img.alt} delay={i * 120}>
-                <div className="group overflow-hidden border border-border">
-                  <img
-                    src={img.src}
-                    alt={img.alt}
-                    loading="lazy"
-                    className="aspect-[4/3] w-full object-cover transition-transform duration-[1400ms] group-hover:scale-110"
-                  />
-                </div>
+              <Reveal key={word} delay={i * 70}>
+                <span className="display text-lg uppercase text-foreground/40 transition-colors duration-500 hover:text-accent sm:text-3xl">
+                  {word}
+                </span>
               </Reveal>
             ))}
           </div>
         </div>
       </section>
+
 
       {/* ---------- INSTANT SCALE ---------- */}
       <Section
