@@ -104,7 +104,12 @@ function Home() {
             <h1 className="display mt-8 text-[2.75rem] leading-[0.88] text-gold-gradient sm:text-[6rem] lg:text-[9rem]">
               TRINETRA
               <span className="block text-foreground/90">2026</span>
+              <span className="sr-only"> — MAKAUT Autumn Fest</span>
             </h1>
+            <p className="mt-4 text-[11px] font-bold uppercase tracking-[0.28em] text-muted-foreground">
+              MAKAUT Autumn Fest
+            </p>
+
           </Reveal>
 
           <div className="mt-10 grid gap-10 lg:grid-cols-[1.2fr_1fr] lg:items-end">
