@@ -297,9 +297,14 @@
 
 /* Alpona-inspired ornamental dotted texture */
 @utility alpona {
-  background-image: radial-gradient(oklch(0.81 0.166 76 / 22%) 1px, transparent 1px);
+  background-image: radial-gradient(var(--alpona-dot) 1px, transparent 1px);
   background-size: 22px 22px;
 }
+
+@utility hero-veil {
+  background-image: var(--gradient-hero);
+}
+
 
 /* ---------- Animations ---------- */
 
