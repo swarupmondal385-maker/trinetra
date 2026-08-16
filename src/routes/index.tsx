@@ -84,61 +84,63 @@ function Home() {
   return (
     <>
       {/* ---------- HERO ---------- */}
-      <section className="relative isolate flex min-h-screen items-end overflow-hidden">
+      <section className="media-dark relative isolate flex min-h-[100svh] items-end overflow-hidden">
         <img
           src={heroCrowd}
           alt="A crowd of thousands at a Durga Puja-inspired festival stage lit in vermilion and gold"
           width={1920}
           height={1088}
-          className="animate-curtain absolute inset-0 -z-20 h-full w-full object-cover"
+          className="animate-ken-burns absolute inset-0 -z-20 h-full w-full object-cover"
         />
-        <div className="absolute inset-0 -z-10 bg-[linear-gradient(180deg,oklch(0.13_0.008_25/72%),oklch(0.13_0.008_25/40%)_35%,oklch(0.13_0.008_25/96%))]" />
+        <div className="hero-veil absolute inset-0 -z-10" />
+        <div className="alpona absolute inset-0 -z-10 opacity-25" />
 
-        <div className="container-x pb-14 pt-32 sm:pb-20 sm:pt-40">
+        <div className="container-x pb-12 pt-28 sm:pb-20 sm:pt-40">
           <Reveal>
-            <div className="flex items-center gap-4">
-              <TrinetraMark className="h-10 w-auto text-accent" animate />
-              <p className="eyebrow">{festival.descriptor}</p>
+            <div className="flex items-center gap-3 sm:gap-4">
+              <TrinetraMark className="h-8 w-auto text-accent sm:h-10" animate />
+              <p className="eyebrow text-[9px] sm:text-[11px]">{festival.descriptor}</p>
             </div>
           </Reveal>
 
           <Reveal delay={120}>
-            <h1 className="display mt-8 text-[2.75rem] leading-[0.88] text-gold-gradient sm:text-[6rem] lg:text-[9rem]">
+            <h1 className="display animate-blur-in mt-6 text-[2.25rem] leading-[0.9] text-gold-gradient sm:mt-8 sm:text-[6rem] lg:text-[9rem]">
               TRINETRA
               <span className="block text-foreground/90">2026</span>
               <span className="sr-only"> — MAKAUT Autumn Fest</span>
             </h1>
-            <p className="mt-4 text-[11px] font-bold uppercase tracking-[0.28em] text-muted-foreground">
+            <p className="mt-3 text-[10px] font-bold uppercase tracking-[0.28em] text-muted-foreground sm:mt-4 sm:text-[11px]">
               MAKAUT Autumn Fest
             </p>
-
           </Reveal>
 
-          <div className="mt-10 grid gap-10 lg:grid-cols-[1.2fr_1fr] lg:items-end">
+          <div className="mt-8 grid gap-8 sm:mt-10 sm:gap-10 lg:grid-cols-[1.2fr_1fr] lg:items-end">
             <Reveal delay={200}>
-              <h2 className="max-w-2xl text-xl font-extrabold uppercase leading-[1.15] sm:text-4xl">
+              <h2 className="max-w-2xl text-lg font-extrabold uppercase leading-[1.2] sm:text-4xl">
                 TRINETRA — The Sharod Symphony
                 <br />
                 <span className="text-gold-gradient">Where Bengal's greatest saga awakens on campus.</span>
               </h2>
-              <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground">{festival.intro}</p>
-              <div className="mt-9 flex flex-wrap gap-3">
+              <p className="mt-5 max-w-xl text-sm leading-relaxed text-muted-foreground sm:mt-6 sm:text-base">
+                {festival.intro}
+              </p>
+              <div className="mt-8 flex flex-col gap-3 sm:mt-9 sm:flex-row sm:flex-wrap">
                 <Link
                   to="/packages"
-                  className="group inline-flex items-center gap-2 bg-accent px-7 py-4 text-[11px] font-bold uppercase tracking-[0.18em] text-accent-foreground transition-shadow duration-300 hover:shadow-[var(--glow-marigold)]"
+                  className="group sheen inline-flex items-center justify-center gap-2 bg-accent px-6 py-4 text-center text-[10px] font-bold uppercase tracking-[0.18em] text-accent-foreground transition-shadow duration-300 hover:shadow-[var(--glow-marigold)] sm:px-7 sm:text-[11px]"
                 >
                   Explore partnership opportunities
                   <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                 </Link>
                 <Link
                   to="/experience"
-                  className="inline-flex items-center gap-2 border border-border px-7 py-4 text-[11px] font-bold uppercase tracking-[0.18em] transition-colors hover:border-accent hover:text-accent"
+                  className="inline-flex items-center justify-center gap-2 border border-border px-6 py-4 text-[10px] font-bold uppercase tracking-[0.18em] transition-colors hover:border-accent hover:text-accent sm:px-7 sm:text-[11px]"
                 >
                   View the experience
                 </Link>
                 <Link
                   to="/partner"
-                  className="inline-flex items-center gap-2 px-3 py-4 text-[11px] font-bold uppercase tracking-[0.18em] text-accent underline-offset-8 hover:underline"
+                  className="inline-flex items-center justify-center gap-2 px-3 py-3 text-[10px] font-bold uppercase tracking-[0.18em] text-accent underline-offset-8 hover:underline sm:py-4 sm:text-[11px]"
                 >
                   Book a sponsorship meeting
                 </Link>
@@ -147,71 +149,71 @@ function Home() {
 
             <Reveal delay={280}>
               <dl className="grid grid-cols-1 gap-px border border-border bg-border sm:grid-cols-2">
-                <div className="bg-background/80 p-6 backdrop-blur">
+                <div className="bg-background/70 p-5 backdrop-blur sm:p-6">
                   <dt className="eyebrow">Dates</dt>
-                  <dd className="mt-3 text-lg font-bold">{festival.dates}</dd>
+                  <dd className="mt-2 text-base font-bold sm:mt-3 sm:text-lg">{festival.dates}</dd>
                 </div>
-                <div className="bg-background/80 p-6 backdrop-blur">
+                <div className="bg-background/70 p-5 backdrop-blur sm:p-6">
                   <dt className="eyebrow">Venue</dt>
-                  <dd className="mt-3 text-lg font-bold">MAKAUT, WB Main Campus</dd>
+                  <dd className="mt-2 text-base font-bold sm:mt-3 sm:text-lg">MAKAUT, WB Main Campus</dd>
                 </div>
-                <div className="bg-background/80 p-6 backdrop-blur sm:col-span-2">
+                <div className="bg-background/70 p-5 backdrop-blur sm:col-span-2 sm:p-6">
                   <dt className="eyebrow">Organised by</dt>
-                  <dd className="mt-3 text-sm text-muted-foreground">
-                    MAKAUT Cultural Association (MCA) · CRED — Corporate Relations and Events Department
+                  <dd className="mt-2 text-sm text-muted-foreground sm:mt-3">
+                    MAKAUT Cultural Association (MCA)
                   </dd>
                 </div>
               </dl>
             </Reveal>
           </div>
 
-          <div className="mt-14 flex items-center gap-3 text-[10px] font-bold uppercase tracking-[0.3em] text-muted-foreground">
-            <span className="animate-float-slow inline-block h-10 w-px bg-accent" />
+          <div className="mt-10 flex items-center gap-3 text-[9px] font-bold uppercase tracking-[0.3em] text-muted-foreground sm:mt-14 sm:text-[10px]">
+            <span className="animate-float-slow inline-block h-8 w-px bg-accent sm:h-10" />
             Scroll to begin
           </div>
         </div>
       </section>
 
-      {/* ---------- OPENING FILM ---------- */}
-      <section className="relative overflow-hidden border-y border-border py-16 sm:py-24 md:py-32">
-        <div className="ember-veil absolute inset-0 -z-10" />
-        <div className="container-x">
+      {/* ---------- OPENING FILM (full-bleed, autoplaying background) ---------- */}
+      <section
+        aria-label="TRINETRA opening film"
+        className="media-dark relative isolate flex h-[70svh] min-h-[420px] w-full items-end overflow-hidden border-y border-border sm:h-[100svh]"
+      >
+        <video
+          src={openingFilm.url}
+          poster={openingFilmPoster.url}
+          autoPlay
+          muted
+          loop
+          playsInline
+          disablePictureInPicture
+          controlsList="nodownload noplaybackrate"
+          preload="auto"
+          aria-hidden="true"
+          tabIndex={-1}
+          className="pointer-events-none absolute inset-0 -z-20 h-full w-full select-none bg-black object-cover"
+        />
+        <div className="pointer-events-none absolute inset-0 -z-10 bg-[var(--gradient-hero)]" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 -z-10 h-2/3 bg-[linear-gradient(180deg,transparent,oklch(0.1_0.008_25/88%))]" />
+
+        <div className="container-x pb-10 sm:pb-16">
           <Reveal>
-            <p className="eyebrow">The opening film</p>
-            <h2 className="display mt-4 text-2xl leading-[0.95] text-gold-gradient sm:text-5xl lg:text-6xl">
-              TRINETRA in motion
-            </h2>
+            <p className="eyebrow drop-shadow-[0_2px_10px_oklch(0_0_0/70%)]">The opening film</p>
           </Reveal>
-
-          <Reveal delay={120}>
-            <figure className="group relative mt-8 overflow-hidden border border-border sm:mt-12">
-              <video
-                src={openingFilm.url}
-                poster={openingFilmPoster.url}
-                controls
-                playsInline
-                muted
-                loop
-                autoPlay
-                preload="metadata"
-                aria-label="TRINETRA 2026 opening film"
-                className="aspect-video w-full bg-black object-cover"
-              />
-              <figcaption className="sr-only">TRINETRA 2026 opening film</figcaption>
-            </figure>
-          </Reveal>
-
-          <div className="mt-10 flex flex-wrap gap-x-6 gap-y-3 sm:mt-12">
+          <div className="mt-5 flex flex-wrap gap-x-5 gap-y-2 sm:mt-8 sm:gap-x-8">
             {montage.map((word, i) => (
               <Reveal key={word} delay={i * 70}>
-                <span className="display text-lg uppercase text-foreground/40 transition-colors duration-500 hover:text-accent sm:text-3xl">
+                <span className="display text-base uppercase text-foreground/85 drop-shadow-[0_2px_14px_oklch(0_0_0/80%)] transition-colors duration-500 hover:text-accent sm:text-3xl lg:text-4xl">
                   {word}
                 </span>
               </Reveal>
             ))}
           </div>
         </div>
+
       </section>
+
+
 
 
       {/* ---------- INSTANT SCALE ---------- */}
@@ -318,7 +320,10 @@ function Home() {
             line: "An iconic name in the Bengali rock scene, live on the TRINETRA main stage.",
           },
         ].map((s) => (
-          <article key={s.name} className="group relative isolate min-h-[60vh] overflow-hidden md:min-h-[70vh]">
+          <article
+            key={s.name}
+            className="media-dark group relative isolate min-h-[52vh] overflow-hidden sm:min-h-[60vh] md:min-h-[70vh]"
+          >
             <img
               src={s.img}
               alt={s.name}

@@ -115,6 +115,12 @@
   --gradient-night: linear-gradient(180deg, oklch(0.13 0.008 25 / 0%), oklch(0.13 0.008 25 / 92%));
   --gradient-veil: radial-gradient(120% 90% at 50% 0%, oklch(0.432 0.153 26 / 35%), transparent 70%);
   --gradient-gold-text: linear-gradient(100deg, oklch(0.81 0.166 76), oklch(0.95 0.06 88) 45%, oklch(0.749 0.108 82));
+  --gradient-hero: linear-gradient(
+    180deg,
+    oklch(0.13 0.008 25 / 72%),
+    oklch(0.13 0.008 25 / 40%) 35%,
+    oklch(0.13 0.008 25 / 96%)
+  );
 
   /* Shadows & glows */
   --shadow-ember: 0 24px 80px -24px oklch(0.63 0.196 41 / 55%);
@@ -124,6 +130,7 @@
   --transition-silk: 600ms cubic-bezier(0.16, 1, 0.3, 1);
 
   --surface-grad: linear-gradient(160deg, oklch(0.2 0.016 34), oklch(0.155 0.01 28));
+  --alpona-dot: oklch(0.81 0.166 76 / 22%);
   color-scheme: dark;
 }
 
@@ -131,34 +138,66 @@
   color-scheme: dark;
 }
 
-/* Daylight theme — ivory paper, vermilion ink. Dark remains the default. */
+/* Daylight theme — warm ivory paper, vermilion ink. Dark remains the default. */
 .light {
   color-scheme: light;
 
-  --background: oklch(0.982 0.012 84);
-  --foreground: oklch(0.19 0.02 30);
-  --card: oklch(0.955 0.016 82);
-  --card-foreground: oklch(0.19 0.02 30);
-  --popover: oklch(0.99 0.008 84);
-  --popover-foreground: oklch(0.19 0.02 30);
-  --primary: var(--vermilion);
-  --primary-foreground: oklch(0.98 0.012 85);
-  --secondary: oklch(0.93 0.022 80);
+  --background: oklch(0.975 0.014 82);
+  --foreground: oklch(0.175 0.024 32);
+  --card: oklch(0.995 0.006 84);
+  --card-foreground: oklch(0.175 0.024 32);
+  --popover: oklch(0.995 0.005 84);
+  --popover-foreground: oklch(0.175 0.024 32);
+  --primary: oklch(0.47 0.17 30);
+  --primary-foreground: oklch(0.99 0.012 85);
+  --secondary: oklch(0.935 0.024 78);
   --secondary-foreground: oklch(0.22 0.03 30);
-  --muted: oklch(0.94 0.018 80);
-  --muted-foreground: oklch(0.44 0.035 45);
-  --accent: oklch(0.55 0.16 45);
+  --muted: oklch(0.945 0.02 80);
+  --muted-foreground: oklch(0.42 0.04 42);
+  --accent: oklch(0.53 0.185 38);
   --accent-foreground: oklch(0.99 0.01 85);
-  --border: oklch(0.5 0.05 45 / 26%);
-  --input: oklch(0.5 0.05 45 / 34%);
-  --ring: var(--vermilion);
+  --border: oklch(0.42 0.06 42 / 22%);
+  --input: oklch(0.42 0.06 42 / 32%);
+  --ring: oklch(0.53 0.185 38);
 
-  --gradient-gold-text: linear-gradient(100deg, oklch(0.5 0.17 32), oklch(0.62 0.19 45) 45%, oklch(0.55 0.13 70));
-  --gradient-veil: radial-gradient(120% 90% at 50% 0%, oklch(0.63 0.196 41 / 14%), transparent 70%);
-  --shadow-plate: 0 1px 0 0 oklch(1 0 0 / 70%) inset, 0 24px 50px -32px oklch(0.3 0.05 40 / 40%);
-  --glow-marigold: 0 0 0 1px oklch(0.55 0.16 45 / 30%), 0 0 40px -8px oklch(0.55 0.16 45 / 35%);
-  --surface-grad: linear-gradient(160deg, oklch(0.985 0.012 84), oklch(0.945 0.018 80));
+  --gradient-gold-text: linear-gradient(100deg, oklch(0.45 0.18 30), oklch(0.58 0.2 42) 45%, oklch(0.5 0.15 62));
+  --gradient-ember: linear-gradient(135deg, oklch(0.47 0.17 28), oklch(0.6 0.19 42) 55%, oklch(0.72 0.15 72));
+  --gradient-veil: radial-gradient(120% 90% at 50% 0%, oklch(0.63 0.196 41 / 12%), transparent 70%);
+  --gradient-night: linear-gradient(180deg, oklch(0.13 0.008 25 / 0%), oklch(0.13 0.008 25 / 82%));
+  --shadow-plate:
+    0 1px 0 0 oklch(1 0 0 / 80%) inset, 0 24px 60px -34px oklch(0.35 0.09 40 / 34%),
+    0 2px 8px -4px oklch(0.35 0.09 40 / 14%);
+  --shadow-ember: 0 24px 70px -28px oklch(0.55 0.18 40 / 40%);
+  --glow-marigold: 0 0 0 1px oklch(0.53 0.185 38 / 28%), 0 12px 32px -12px oklch(0.53 0.185 38 / 40%);
+  --surface-grad: linear-gradient(160deg, oklch(1 0 0), oklch(0.958 0.018 80));
+  --alpona-dot: oklch(0.55 0.16 45 / 16%);
 }
+
+/* Text sitting on top of imagery/video stays light in both themes.
+   Unlayered so it beats the unlayered .light / .dark theme blocks. */
+.media-dark,
+.light .media-dark,
+.dark .media-dark {
+  --foreground: oklch(0.972 0.021 82);
+  --muted-foreground: oklch(0.82 0.03 72);
+  --border: oklch(0.85 0.05 70 / 30%);
+  --background: oklch(0.13 0.008 25);
+  --card: oklch(0.175 0.012 30);
+  --accent: oklch(0.81 0.166 76);
+  --accent-foreground: oklch(0.16 0.02 40);
+  --gradient-gold-text: linear-gradient(
+    100deg,
+    oklch(0.81 0.166 76),
+    oklch(0.95 0.06 88) 45%,
+    oklch(0.749 0.108 82)
+  );
+  --gradient-night: linear-gradient(180deg, oklch(0.13 0.008 25 / 0%), oklch(0.13 0.008 25 / 88%));
+  --alpona-dot: oklch(0.81 0.166 76 / 18%);
+  color: var(--foreground);
+}
+
+
+
 
 @layer base {
   * {
@@ -275,9 +314,14 @@
 
 /* Alpona-inspired ornamental dotted texture */
 @utility alpona {
-  background-image: radial-gradient(oklch(0.81 0.166 76 / 22%) 1px, transparent 1px);
+  background-image: radial-gradient(var(--alpona-dot) 1px, transparent 1px);
   background-size: 22px 22px;
 }
+
+@utility hero-veil {
+  background-image: var(--gradient-hero);
+}
+
 
 /* ---------- Animations ---------- */
 
@@ -369,6 +413,112 @@
 @utility reveal-in {
   animation: trinetra-rise 900ms cubic-bezier(0.16, 1, 0.3, 1) both;
 }
+
+/* ---------- Extra motion ---------- */
+
+@keyframes trinetra-ken-burns {
+  from {
+    transform: scale(1.06) translate3d(0, 0, 0);
+  }
+  to {
+    transform: scale(1.16) translate3d(0, -1.5%, 0);
+  }
+}
+
+@keyframes trinetra-sheen {
+  0% {
+    transform: translateX(-120%) skewX(-18deg);
+  }
+  60%,
+  100% {
+    transform: translateX(220%) skewX(-18deg);
+  }
+}
+
+@keyframes trinetra-drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate3d(1.5%, -2%, 0) rotate(1.2deg);
+  }
+}
+
+@keyframes trinetra-blur-in {
+  from {
+    opacity: 0;
+    filter: blur(14px);
+    transform: translate3d(0, 14px, 0);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: none;
+  }
+}
+
+@utility animate-ken-burns {
+  animation: trinetra-ken-burns 22s ease-in-out infinite alternate;
+}
+
+@utility animate-drift {
+  animation: trinetra-drift 16s ease-in-out infinite;
+}
+
+@utility animate-blur-in {
+  animation: trinetra-blur-in 1.1s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Glass sheen sweep for primary CTAs */
+@utility sheen {
+  position: relative;
+  overflow: hidden;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 45%;
+    background: linear-gradient(90deg, transparent, oklch(1 0 0 / 32%), transparent);
+    transform: translateX(-120%) skewX(-18deg);
+  }
+  &:hover::after {
+    animation: trinetra-sheen 900ms ease-out;
+  }
+}
+
+@utility hover-lift {
+  transition:
+    transform var(--transition-silk),
+    box-shadow var(--transition-silk),
+    border-color 300ms ease;
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-plate);
+  }
+}
+
+@utility underline-sweep {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    height: 1px;
+    width: 100%;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 420ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  &:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+}
+
 
 @media (prefers-reduced-motion: reduce) {
   *,

@@ -22,20 +22,26 @@ export function PageHero({
   children?: ReactNode;
 }) {
   return (
-    <section className="relative isolate overflow-hidden pb-16 pt-28 sm:pb-20 sm:pt-36 md:pb-28 md:pt-48">
+    <section
+      className={cn(
+        "relative isolate overflow-hidden pb-14 pt-24 sm:pb-20 sm:pt-36 md:pb-28 md:pt-48",
+        image && "media-dark",
+      )}
+    >
       {image && (
         <>
           <img
             src={image}
             alt=""
             aria-hidden="true"
-            className="absolute inset-0 -z-20 h-full w-full object-cover opacity-35"
+            className="animate-ken-burns absolute inset-0 -z-20 h-full w-full object-cover opacity-45"
           />
           <div className="absolute inset-0 -z-10 bg-[linear-gradient(180deg,oklch(0.13_0.008_25/85%),oklch(0.13_0.008_25/96%))]" />
         </>
       )}
       {!image && <div className="ember-veil absolute inset-0 -z-10" />}
       <div className="alpona absolute inset-0 -z-10 opacity-40" />
+
       <div className={cn("container-x", align === "center" && "text-center")}>
         <Reveal>
           <p className="eyebrow">{eyebrow}</p>
@@ -129,15 +135,18 @@ export function StatGrid({ items, columns = 4 }: { items: Metric[]; columns?: 3 
     >
       {items.map((m, i) => (
         <Reveal key={m.label} delay={i * 60} className="bg-background">
-          <div className="group h-full p-6 transition-colors duration-500 hover:bg-card sm:p-8">
-            <p className="display text-3xl text-gold-gradient sm:text-4xl lg:text-5xl">
+          <div className="group h-full p-5 transition-colors duration-500 hover:bg-card sm:p-8">
+            <p className="display text-2xl text-gold-gradient sm:text-4xl lg:text-5xl">
               <CountUp value={m.value} />
             </p>
-            <p className="mt-4 text-sm font-semibold uppercase tracking-[0.14em] text-foreground">{m.label}</p>
-            <p className="mt-3 text-[10px] font-bold uppercase tracking-[0.22em] text-muted-foreground">
+            <p className="mt-3 text-xs font-semibold uppercase tracking-[0.14em] text-foreground sm:mt-4 sm:text-sm">
+              {m.label}
+            </p>
+            <p className="mt-2 text-[9px] font-bold uppercase tracking-[0.22em] text-muted-foreground sm:mt-3 sm:text-[10px]">
               {m.status}
             </p>
           </div>
+
         </Reveal>
       ))}
     </div>
@@ -174,7 +183,7 @@ export function CTABand({
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
             <Link
               to={primary.to}
-              className="group inline-flex w-full items-center justify-center gap-2 bg-accent px-6 py-4 sm:w-auto sm:px-8 text-[11px] font-bold uppercase tracking-[0.2em] text-accent-foreground transition-all duration-300 hover:shadow-[var(--glow-marigold)]"
+              className="group sheen inline-flex w-full items-center justify-center gap-2 bg-accent px-6 py-4 sm:w-auto sm:px-8 text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.2em] text-accent-foreground transition-all duration-300 hover:shadow-[var(--glow-marigold)]"
             >
               {primary.label}
               <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
@@ -241,21 +250,27 @@ export function PhotoProof({
   className?: string;
 }) {
   return (
-    <figure className={cn("group relative overflow-hidden border border-border", className)}>
+    <figure
+      className={cn(
+        "media-dark group relative overflow-hidden border border-border hover-lift",
+        className,
+      )}
+    >
       <img
         src={image}
         alt={caption ?? event}
         loading="lazy"
         className="h-full w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-105"
       />
-      <figcaption className="absolute inset-x-0 bottom-0 bg-[var(--gradient-night)] p-6">
-        <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-accent">
+      <figcaption className="absolute inset-x-0 bottom-0 bg-[linear-gradient(180deg,transparent,oklch(0.13_0.008_25/92%))] p-4 sm:p-6">
+        <p className="text-[9px] font-bold uppercase tracking-[0.24em] text-accent sm:text-[10px]">
           {category ? `${category} · ` : ""}
           {year}
         </p>
-        <p className="mt-2 text-sm font-semibold text-foreground">{event}</p>
-        {caption && <p className="mt-1 text-xs text-muted-foreground">{caption}</p>}
+        <p className="mt-1.5 text-xs font-semibold text-foreground sm:mt-2 sm:text-sm">{event}</p>
+        {caption && <p className="mt-1 text-[11px] text-muted-foreground sm:text-xs">{caption}</p>}
       </figcaption>
     </figure>
+
   );
 }
