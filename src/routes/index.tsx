@@ -5,6 +5,8 @@ import stageBand from "@/assets/stage-band.jpg";
 import danceTroupe from "@/assets/dance-troupe.jpg";
 import dhaki from "@/assets/dhaki.jpg";
 import campus from "@/assets/campus.jpg";
+import openingFilm from "@/assets/trinetra-opening-film.mp4.asset.json";
+import openingFilmPoster from "@/assets/opening-film-poster.jpg.asset.json";
 import { Reveal } from "@/components/Reveal";
 import { TrinetraMark } from "@/components/TrinetraMark";
 import { CTABand, Marquee, Section, StatGrid } from "@/components/blocks";
