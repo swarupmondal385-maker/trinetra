@@ -4,7 +4,7 @@
  * Level 2 (LLM) uses `knowledgeBase` as grounding context — no invented facts.
  */
 
-import { artists, techArena, trinetra2026 } from "./event";
+import { artists, bandFinale, djNight, techArena, trinetra2026 } from "./event";
 import { festival, metrics, packages } from "./site";
 
 export type AssistantAction = { label: string; to: string };
@@ -51,7 +51,7 @@ export const intents: Intent[] = [
       text: `Day 1 is the technology and innovation arena: ${techArena
         .slice(0, 5)
         .map((t) => t.name)
-        .join(", ")} and more — followed by ${artists[0].name} on the main stage at night.`,
+        .join(", ")} and more — followed by ${djNight.name} on the main stage at night.`,
       actions: [
         { label: "The experience", to: "/experience" },
         { label: "Full schedule", to: "/schedule" },
@@ -181,8 +181,8 @@ DATES: ${trinetra2026.dates}
 VENUE: ${trinetra2026.venue}
 ORGANISER: ${trinetra2026.organiser}, a student-led cultural platform at MAKAUT.
 
-DAY 1 (24 September): Technology & innovation arena — ${techArena.map((t) => t.name).join(", ")} — plus inter-college contests and the MCA clubs show. Night: ${artists[0].name} (${artists[0].category}), genres ${artists[0].genres.join("/")}. Status: invited artist.
-DAY 2 (25 September): Bengali cultural programming, Pathaks x Dhakis, Influencers' Summit, and the live-band finale ${artists[1].name} (${artists[1].category}), genres ${artists[1].genres.join("/")}. Status: invited artist.
+DAY 1 (24 September): Technology & innovation arena — ${techArena.map((t) => t.name).join(", ")} — plus inter-college contests and the MCA clubs show. Night: ${djNight.name} (${djNight.category}), genres ${djNight.genres.join("/")}. Status: invited artist.
+DAY 2 (25 September): Bengali cultural programming, Pathaks x Dhakis, Influencers' Summit, and the live-band finale ${bandFinale.name} (${bandFinale.category}), genres ${bandFinale.genres.join("/")}. Status: invited artist.
 
 AUDIENCE FIGURES (each with its own status label, do not overstate):
 ${metrics.map((m) => `- ${m.value} ${m.label} [${m.status}]`).join("\n")}

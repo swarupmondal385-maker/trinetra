@@ -128,3 +128,7 @@ export const trinetra2026 = {
   eventStart,
   eventEnd,
 };
+
+/** Convenience accessors (typed, non-optional) for the two featured artists. */
+export const djNight: Artist = artists[0]!;
+export const bandFinale: Artist = artists[1]!;
