@@ -1,15 +1,17 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import heroCrowd from "@/assets/hero-crowd.jpg";
-import stageBand from "@/assets/stage-band.jpg";
-import danceTroupe from "@/assets/dance-troupe.jpg";
-
-
+import heroFilm from "@/assets/trinetra-hero.mp4.asset.json";
+import heroPoster from "@/assets/trinetra-hero-poster.jpg.asset.json";
 import openingFilm from "@/assets/trinetra-opening-film.mp4.asset.json";
 import openingFilmPoster from "@/assets/opening-film-poster.jpg.asset.json";
+import { ArtistShowcase } from "@/components/ArtistShowcase";
+import { AlponaDivider, FloatingMotifs } from "@/components/BengaliMotifs";
+import { Countdown } from "@/components/Countdown";
 import { Reveal } from "@/components/Reveal";
 import { TrinetraMark } from "@/components/TrinetraMark";
 import { CTABand, Marquee, Section, StatGrid } from "@/components/blocks";
+import { artists } from "@/data/event";
 import {
   brandEnvironment,
   festival,
@@ -90,10 +92,25 @@ function Home() {
           alt="A crowd of thousands at a Durga Puja-inspired festival stage lit in vermilion and gold"
           width={1920}
           height={1088}
-          className="animate-ken-burns absolute inset-0 -z-20 h-full w-full object-cover"
+          fetchPriority="high"
+          className="animate-ken-burns absolute inset-0 -z-30 h-full w-full object-cover"
+        />
+        <video
+          src={heroFilm.url}
+          poster={heroPoster.url}
+          autoPlay
+          muted
+          loop
+          playsInline
+          disablePictureInPicture
+          preload="metadata"
+          aria-hidden="true"
+          tabIndex={-1}
+          className="pointer-events-none absolute inset-0 -z-20 h-full w-full select-none object-cover"
         />
         <div className="hero-veil absolute inset-0 -z-10" />
         <div className="alpona absolute inset-0 -z-10 opacity-25" />
+        <FloatingMotifs />
 
         <div className="container-x pb-12 pt-28 sm:pb-20 sm:pt-40">
           <Reveal>
@@ -166,6 +183,10 @@ function Home() {
               </dl>
             </Reveal>
           </div>
+
+          <Reveal delay={320}>
+            <Countdown className="mt-10 sm:mt-12" />
+          </Reveal>
 
           <div className="mt-10 flex items-center gap-3 text-[9px] font-bold uppercase tracking-[0.3em] text-muted-foreground sm:mt-14 sm:text-[10px]">
             <span className="animate-float-slow inline-block h-8 w-px bg-accent sm:h-10" />
@@ -251,7 +272,7 @@ function Home() {
         <div className="grid gap-px border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">
           {brandEnvironment.map((c, i) => (
             <Reveal key={c.title} delay={i * 50} className="bg-background">
-              <div className="group h-full p-8 transition-colors duration-500 hover:bg-card">
+              <div className="group h-full p-6 sm:p-8 transition-colors duration-500 hover:bg-card">
                 <span className="text-[10px] font-bold tracking-[0.24em] text-muted-foreground">
                   {String(i + 1).padStart(2, "0")}
                 </span>
@@ -304,48 +325,15 @@ function Home() {
         </div>
       </Section>
 
-      {/* ---------- SHOWSTOPPERS ---------- */}
-      <section className="grid border-y border-border md:grid-cols-2">
-        {[
-          {
-            img: danceTroupe,
-            name: "Rainbow Dance Troupe",
-            meta: "24 September 2026 · 07:00 PM",
-            line: "Energy, creativity, choreography and stage presence — the Day 1 climax.",
-          },
-          {
-            img: stageBand,
-            name: "Fossils — The Band",
-            meta: "25 September 2026 · 04:00 PM",
-            line: "An iconic name in the Bengali rock scene, live on the TRINETRA main stage.",
-          },
-        ].map((s) => (
-          <article
-            key={s.name}
-            className="media-dark group relative isolate min-h-[52vh] overflow-hidden sm:min-h-[60vh] md:min-h-[70vh]"
-          >
-            <img
-              src={s.img}
-              alt={s.name}
-              loading="lazy"
-              className="absolute inset-0 -z-10 h-full w-full object-cover transition-transform duration-[1600ms] group-hover:scale-105"
-            />
-            <div className="absolute inset-0 -z-10 bg-[linear-gradient(180deg,oklch(0.13_0.008_25/40%),oklch(0.13_0.008_25/94%))]" />
-            <div className="flex h-full flex-col justify-end p-6 sm:p-10">
-              <p className="eyebrow">Showstopper</p>
-              <h3 className="mt-4 text-2xl font-extrabold uppercase leading-tight sm:text-5xl">{s.name}</h3>
-              <p className="mt-4 text-[11px] font-bold uppercase tracking-[0.2em] text-accent">{s.meta}</p>
-              <p className="mt-4 max-w-md text-sm text-muted-foreground">{s.line}</p>
-              <Link
-                to="/headliners"
-                className="mt-7 inline-flex w-fit items-center gap-2 text-[11px] font-bold uppercase tracking-[0.2em] text-foreground hover:text-accent"
-              >
-                See the highlight <ArrowUpRight className="h-4 w-4" />
-              </Link>
-            </div>
-          </article>
-        ))}
-      </section>
+      {/* ---------- FEATURED ARTISTS ---------- */}
+      <Section
+        eyebrow="Featured artists"
+        title="Two nights. Two stages of sound."
+        lede={`${artists.map((a) => a.name).join(" and ")} anchor the evenings of TRINETRA 2026 — one for the dancefloor, one for the live band finale.`}
+      >
+        <AlponaDivider className="mb-8 text-accent/60" />
+      </Section>
+      <ArtistShowcase />
 
       <Marquee items={sponsorHooks} />
 
@@ -393,7 +381,7 @@ function Home() {
         <div className="grid gap-px border border-border bg-border md:grid-cols-2 lg:grid-cols-3">
           {whySponsor.slice(0, 6).map((b, i) => (
             <Reveal key={b.no} delay={i * 60} className="bg-background">
-              <div className="h-full p-8">
+              <div className="h-full p-6 sm:p-8">
                 <p className="display text-3xl text-gold-gradient">{b.no}</p>
                 <h3 className="mt-4 text-base font-bold uppercase tracking-[0.1em]">{b.title}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{b.body}</p>

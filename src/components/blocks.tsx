@@ -49,7 +49,7 @@ export function PageHero({
         <Reveal delay={80}>
           <h1
             className={cn(
-              "mt-5 max-w-5xl text-[2rem] font-extrabold uppercase leading-[1.02] sm:text-5xl md:text-6xl lg:text-7xl",
+              "mt-5 max-w-5xl text-balance break-words hyphens-auto text-[clamp(1.75rem,7.5vw,4.5rem)] font-extrabold uppercase leading-[1.04]",
               align === "center" && "mx-auto",
             )}
           >
@@ -107,7 +107,7 @@ export function Section({
             )}
             {title && (
               <Reveal delay={60}>
-                <h2 className="mt-4 text-2xl font-extrabold uppercase leading-[1.1] sm:text-4xl lg:text-5xl">
+                <h2 className="mt-4 text-balance break-words text-[clamp(1.4rem,6vw,3rem)] font-extrabold uppercase leading-[1.1]">
                   {title}
                 </h2>
               </Reveal>
@@ -170,7 +170,7 @@ export function CTABand({
       <div className="alpona absolute inset-0 -z-10 opacity-50" />
       <div className="container-x text-center">
         <Reveal>
-          <h2 className="mx-auto max-w-4xl text-2xl font-extrabold uppercase leading-[1.1] sm:text-4xl md:text-5xl lg:text-6xl">
+          <h2 className="mx-auto max-w-4xl text-balance break-words text-[clamp(1.5rem,6.5vw,3.5rem)] font-extrabold uppercase leading-[1.1]">
             {title}
           </h2>
         </Reveal>

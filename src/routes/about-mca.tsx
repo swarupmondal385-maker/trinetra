@@ -40,7 +40,7 @@ function AboutMca() {
         <div className="grid gap-px border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
           {["Talent", "Creativity", "Passion", "Identity", "Collaboration", "Culture"].map((v, i) => (
             <Reveal key={v} delay={i * 50} className="bg-background">
-              <div className="p-10">
+              <div className="p-6 sm:p-10">
                 <span className="text-[10px] font-bold tracking-[0.24em] text-muted-foreground">
                   {String(i + 1).padStart(2, "0")}
                 </span>
@@ -55,7 +55,7 @@ function AboutMca() {
         <div className="grid gap-px border border-border bg-border md:grid-cols-3">
           {contacts.slice(0, 3).map((c, i) => (
             <Reveal key={c.name} delay={i * 60} className="bg-background">
-              <div className="h-full p-8">
+              <div className="h-full p-6 sm:p-8">
                 <p className="eyebrow">{c.role}</p>
                 <p className="mt-4 text-xl font-bold">{c.name}</p>
                 {c.email && (
@@ -92,7 +92,7 @@ function AboutMca() {
         <div className="grid gap-px border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">
           {clubs.map((c, i) => (
             <Reveal key={c.name} delay={i * 50} className="bg-background">
-              <div className="h-full p-8">
+              <div className="h-full p-6 sm:p-8">
                 <h3 className="text-base font-bold uppercase tracking-[0.1em]">{c.name}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{c.line}</p>
               </div>
