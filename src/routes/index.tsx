@@ -272,7 +272,7 @@ function Home() {
         <div className="grid gap-px border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">
           {brandEnvironment.map((c, i) => (
             <Reveal key={c.title} delay={i * 50} className="bg-background">
-              <div className="group h-full p-8 transition-colors duration-500 hover:bg-card">
+              <div className="group h-full p-6 sm:p-8 transition-colors duration-500 hover:bg-card">
                 <span className="text-[10px] font-bold tracking-[0.24em] text-muted-foreground">
                   {String(i + 1).padStart(2, "0")}
                 </span>
@@ -381,7 +381,7 @@ function Home() {
         <div className="grid gap-px border border-border bg-border md:grid-cols-2 lg:grid-cols-3">
           {whySponsor.slice(0, 6).map((b, i) => (
             <Reveal key={b.no} delay={i * 60} className="bg-background">
-              <div className="h-full p-8">
+              <div className="h-full p-6 sm:p-8">
                 <p className="display text-3xl text-gold-gradient">{b.no}</p>
                 <h3 className="mt-4 text-base font-bold uppercase tracking-[0.1em]">{b.title}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{b.body}</p>

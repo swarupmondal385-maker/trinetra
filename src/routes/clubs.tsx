@@ -41,7 +41,7 @@ function Clubs() {
                 </div>
                 <ul className="grid gap-px self-start border border-border bg-border sm:grid-cols-2">
                   {c.people.map((p) => (
-                    <li key={p.name} className="bg-background p-6">
+                    <li key={p.name} className="bg-background p-5 sm:p-6">
                       <p className="text-base font-bold">{p.name}</p>
                       <p className="mt-1 text-[10px] font-bold uppercase tracking-[0.22em] text-accent">{p.role}</p>
                       {showScores && p.score && (
