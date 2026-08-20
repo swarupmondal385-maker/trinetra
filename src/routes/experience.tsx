@@ -69,12 +69,12 @@ function Experience() {
 
         <div className="grid gap-px border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
           {experienceCategories.map((c, i) => (
-            <Reveal key={c.name} delay={i * 40} className="bg-background">
-              <div className="group h-full p-6 sm:p-8 transition-colors duration-500 hover:bg-card">
+            <Reveal key={c.name} delay={i * 40} className="min-w-0 bg-background">
+              <div className="group h-full min-w-0 p-6 sm:p-8 transition-colors duration-500 hover:bg-card">
                 <span className="text-[10px] font-bold tracking-[0.24em] text-muted-foreground">
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                <h3 className="mt-4 text-2xl font-extrabold uppercase transition-colors group-hover:text-accent">
+                <h3 className="mt-4 break-words text-xl font-extrabold uppercase transition-colors group-hover:text-accent sm:text-2xl">
                   {c.name}
                 </h3>
                 <p
