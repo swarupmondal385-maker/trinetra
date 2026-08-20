@@ -92,10 +92,25 @@ function Home() {
           alt="A crowd of thousands at a Durga Puja-inspired festival stage lit in vermilion and gold"
           width={1920}
           height={1088}
-          className="animate-ken-burns absolute inset-0 -z-20 h-full w-full object-cover"
+          fetchPriority="high"
+          className="animate-ken-burns absolute inset-0 -z-30 h-full w-full object-cover"
+        />
+        <video
+          src={heroFilm.url}
+          poster={heroPoster.url}
+          autoPlay
+          muted
+          loop
+          playsInline
+          disablePictureInPicture
+          preload="metadata"
+          aria-hidden="true"
+          tabIndex={-1}
+          className="pointer-events-none absolute inset-0 -z-20 h-full w-full select-none object-cover"
         />
         <div className="hero-veil absolute inset-0 -z-10" />
         <div className="alpona absolute inset-0 -z-10 opacity-25" />
+        <FloatingMotifs />
 
         <div className="container-x pb-12 pt-28 sm:pb-20 sm:pt-40">
           <Reveal>
