@@ -15,6 +15,7 @@ import { SiteNav } from "../components/SiteNav";
 import { SiteFooter } from "../components/SiteFooter";
 import { ScrollProgress } from "../components/ScrollProgress";
 import { Toaster } from "../components/ui/sonner";
+import { TrinetraAI } from "../components/TrinetraAI";
 import { themeInitScript } from "../components/ThemeToggle";
 
 function NotFoundComponent() {
@@ -139,6 +140,7 @@ function RootComponent() {
         <Outlet />
       </main>
       <SiteFooter />
+      <TrinetraAI />
       <Toaster />
     </QueryClientProvider>
   );
