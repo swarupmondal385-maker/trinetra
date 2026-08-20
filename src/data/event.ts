@@ -64,7 +64,7 @@ export const artists: Artist[] = [
       "A Kolkata live band bringing alternative and progressive rock together with Hindi and Bengali fusion covers — the loudest, most emotional moment of TRINETRA.",
     genres: ["BollyRock", "Alternative Rock", "Live Band"],
     status: "invited",
-    time: "04:00 PM",
+    time: "06:00 PM",
     imageAlt: "The Morphine India performing live on stage",
     tone: "finale",
     cta: { label: "Explore Band Night", to: "/headliners" },
