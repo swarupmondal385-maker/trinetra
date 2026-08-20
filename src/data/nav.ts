@@ -14,7 +14,7 @@ export const navGroups: { group: string; links: NavLink[] }[] = [
     links: [
       { label: "TRINETRA 2026 Experience", to: "/experience", note: "Twelve worlds across two days" },
       { label: "Event Schedule", to: "/schedule", note: "24–25 September 2026" },
-      { label: "Headliners & Highlights", to: "/headliners", note: "Fossils, Rainbow, Pathaks × Dhakis" },
+      { label: "Artists & Highlights", to: "/headliners", note: "DJ Koyel, The Morphine India, Pathaks × Dhakis" },
       { label: "Clubs & Talent", to: "/clubs", note: "The culture behind the festival" },
     ],
   },
