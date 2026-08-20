@@ -1,15 +1,17 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import heroCrowd from "@/assets/hero-crowd.jpg";
-import stageBand from "@/assets/stage-band.jpg";
-import danceTroupe from "@/assets/dance-troupe.jpg";
-
-
+import heroFilm from "@/assets/trinetra-hero.mp4.asset.json";
+import heroPoster from "@/assets/trinetra-hero-poster.jpg.asset.json";
 import openingFilm from "@/assets/trinetra-opening-film.mp4.asset.json";
 import openingFilmPoster from "@/assets/opening-film-poster.jpg.asset.json";
+import { ArtistShowcase } from "@/components/ArtistShowcase";
+import { AlponaDivider, FloatingMotifs } from "@/components/BengaliMotifs";
+import { Countdown } from "@/components/Countdown";
 import { Reveal } from "@/components/Reveal";
 import { TrinetraMark } from "@/components/TrinetraMark";
 import { CTABand, Marquee, Section, StatGrid } from "@/components/blocks";
+import { artists } from "@/data/event";
 import {
   brandEnvironment,
   festival,
