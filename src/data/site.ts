@@ -111,12 +111,27 @@ export const schedule: { day: string; date: string; items: ScheduleItem[] }[] = 
         sponsorAngle: "Title partner mention, stage backdrop branding and chief-guest association.",
       },
       {
+        code: "AVISHKAR",
+        title: "Technology & Innovation Arena",
+        time: "11:30 AM",
+        description:
+          "Hackathon, robotics arena, project expo, startup pitch and the coding challenge — the engineering heart of MAKAUT on display.",
+        sponsorAngle: "Tech partner naming rights, hiring desk, prize pool branding and product demos.",
+      },
+      {
         code: "SAMMILAN",
         title: "Inter-College Contests",
         time: "12:00 PM",
         description:
           "Competitive showcases bringing participants from colleges across the MAKAUT ecosystem.",
         sponsorAngle: "Prize partner integration, trophy and certificate branding, contest naming.",
+      },
+      {
+        code: "RANANEETI",
+        title: "Gaming & E-Sports Arena",
+        time: "02:00 PM",
+        description: "Live tournaments, big-screen finals and a crowd that stays for every round.",
+        sponsorAngle: "Arena title branding, streamed overlay placement and device sampling.",
       },
       {
         code: "SPANDAN",
@@ -126,19 +141,12 @@ export const schedule: { day: string; date: string; items: ScheduleItem[] }[] = 
         sponsorAngle: "Club-segment presenting rights and youth-facing product sampling.",
       },
       {
-        code: "GARJAN",
-        title: "Pathaks × Dhakis",
-        time: "04:00 PM",
-        description:
-          "A Maharashtrian Dhol-Tasha Pathak meets a traditional Bengali Dhaki crew in a high-energy jugalbandi.",
-        sponsorAngle: "High-recall cultural moment for content capture and LED advertisement.",
-      },
-      {
-        code: "BICHARAN",
-        title: "Rainbow Dance Troupe",
+        code: "AKALBODHAN",
+        title: "DJ Night — DJ Koyel",
         time: "07:00 PM",
-        description: "A headline performance by a troupe known for its energy, choreography and stage presence.",
-        sponsorAngle: "Main stage LCD access, artist association and premium seating hospitality.",
+        description:
+          "Bollywood, commercial, hip-hop, house and techno from a Kolkata-based DJ, with the full campus on its feet.",
+        sponsorAngle: "Immersive LED takeover, beverage partner activation and peak-attendance mention.",
       },
     ],
   },
@@ -146,6 +154,14 @@ export const schedule: { day: string; date: string; items: ScheduleItem[] }[] = 
     day: "Day 02",
     date: "25 September 2026",
     items: [
+      {
+        code: "GARJAN",
+        title: "Pathaks × Dhakis",
+        time: "11:00 AM",
+        description:
+          "A Maharashtrian Dhol-Tasha Pathak meets a traditional Bengali Dhaki crew in a high-energy jugalbandi.",
+        sponsorAngle: "High-recall cultural moment for content capture and LED advertisement.",
+      },
       {
         code: "AVAHAN",
         title: "Influencers' Summit",
@@ -155,11 +171,19 @@ export const schedule: { day: string; date: string; items: ScheduleItem[] }[] = 
         sponsorAngle: "Creator campaigns, branded conversation segments and social content rights.",
       },
       {
-        code: "DARSHAN",
-        title: "Fossils — The Band",
-        time: "04:00 PM",
+        code: "BICHARAN",
+        title: "Cultural Evening & Fashion Ramp",
+        time: "03:00 PM",
         description:
-          "One of the most influential names in the Bengali rock scene, live on the TRINETRA main stage.",
+          "Bengali cultural programming, a student-led editorial runway and the clubs' finale showcase.",
+        sponsorAngle: "Ramp presenting rights, apparel integration and premium seating hospitality.",
+      },
+      {
+        code: "DARSHAN",
+        title: "The Morphine India — Live",
+        time: "06:00 PM",
+        description:
+          "The live-band finale of TRINETRA 2026 on the main stage, closing two days of culture and code.",
         sponsorAngle: "Ticket branding, pamphlet distribution, VIP passes and product launch sequence.",
       },
       {
