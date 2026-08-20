@@ -31,7 +31,7 @@ function Clubs() {
         <div className="space-y-px border border-border bg-border">
           {clubs.map((c, i) => (
             <Reveal key={c.name} delay={i * 50} className="bg-background">
-              <div className="grid gap-6 p-8 md:grid-cols-[1fr_1.3fr] md:p-10">
+              <div className="grid gap-6 p-5 sm:p-8 md:grid-cols-[1fr_1.3fr] md:p-10">
                 <div>
                   <span className="text-[10px] font-bold tracking-[0.24em] text-muted-foreground">
                     {String(i + 1).padStart(2, "0")}
