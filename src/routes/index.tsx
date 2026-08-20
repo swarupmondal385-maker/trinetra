@@ -321,48 +321,15 @@ function Home() {
         </div>
       </Section>
 
-      {/* ---------- SHOWSTOPPERS ---------- */}
-      <section className="grid border-y border-border md:grid-cols-2">
-        {[
-          {
-            img: danceTroupe,
-            name: "Rainbow Dance Troupe",
-            meta: "24 September 2026 · 07:00 PM",
-            line: "Energy, creativity, choreography and stage presence — the Day 1 climax.",
-          },
-          {
-            img: stageBand,
-            name: "Fossils — The Band",
-            meta: "25 September 2026 · 04:00 PM",
-            line: "An iconic name in the Bengali rock scene, live on the TRINETRA main stage.",
-          },
-        ].map((s) => (
-          <article
-            key={s.name}
-            className="media-dark group relative isolate min-h-[52vh] overflow-hidden sm:min-h-[60vh] md:min-h-[70vh]"
-          >
-            <img
-              src={s.img}
-              alt={s.name}
-              loading="lazy"
-              className="absolute inset-0 -z-10 h-full w-full object-cover transition-transform duration-[1600ms] group-hover:scale-105"
-            />
-            <div className="absolute inset-0 -z-10 bg-[linear-gradient(180deg,oklch(0.13_0.008_25/40%),oklch(0.13_0.008_25/94%))]" />
-            <div className="flex h-full flex-col justify-end p-6 sm:p-10">
-              <p className="eyebrow">Showstopper</p>
-              <h3 className="mt-4 text-2xl font-extrabold uppercase leading-tight sm:text-5xl">{s.name}</h3>
-              <p className="mt-4 text-[11px] font-bold uppercase tracking-[0.2em] text-accent">{s.meta}</p>
-              <p className="mt-4 max-w-md text-sm text-muted-foreground">{s.line}</p>
-              <Link
-                to="/headliners"
-                className="mt-7 inline-flex w-fit items-center gap-2 text-[11px] font-bold uppercase tracking-[0.2em] text-foreground hover:text-accent"
-              >
-                See the highlight <ArrowUpRight className="h-4 w-4" />
-              </Link>
-            </div>
-          </article>
-        ))}
-      </section>
+      {/* ---------- FEATURED ARTISTS ---------- */}
+      <Section
+        eyebrow="Featured artists"
+        title="Two nights. Two stages of sound."
+        lede={`${artists.map((a) => a.name).join(" and ")} anchor the evenings of TRINETRA 2026 — one for the dancefloor, one for the live band finale.`}
+      >
+        <AlponaDivider className="mb-8 text-accent/60" />
+      </Section>
+      <ArtistShowcase />
 
       <Marquee items={sponsorHooks} />
 
