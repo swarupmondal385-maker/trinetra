@@ -184,6 +184,10 @@ function Home() {
             </Reveal>
           </div>
 
+          <Reveal delay={320}>
+            <Countdown className="mt-10 sm:mt-12" />
+          </Reveal>
+
           <div className="mt-10 flex items-center gap-3 text-[9px] font-bold uppercase tracking-[0.3em] text-muted-foreground sm:mt-14 sm:text-[10px]">
             <span className="animate-float-slow inline-block h-8 w-px bg-accent sm:h-10" />
             Scroll to begin
