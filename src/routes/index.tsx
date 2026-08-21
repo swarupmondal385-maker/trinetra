@@ -38,7 +38,7 @@ export const Route = createFileRoute("/")({
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:url", content: "https://mcamsv.com/" },
+      { property: "og:url", content: "https://www.mcamsv.com/" },
       { property: "og:site_name", content: "TRINETRA 2026" },
       { property: "og:image", content: "https://www.mcamsv.com/social-preview.jpg" },
       { property: "og:image:width", content: "1200" },
@@ -47,7 +47,7 @@ export const Route = createFileRoute("/")({
       { name: "twitter:title", content: "TRINETRA 2026 — MAKAUT Autumn Fest | Sponsorship" },
       { name: "twitter:description", content: "TRINETRA 2026, MAKAUT's Autumn Fest on 24–25 September 2026. A two-day cultural festival and brand environment — explore partnership opportunities." },
     ],
-    links: [{ rel: "canonical", href: "https://mcamsv.com/" }],
+    links: [{ rel: "canonical", href: "https://www.mcamsv.com/" }],
     scripts: [
       {
         type: "application/ld+json",
@@ -76,9 +76,10 @@ export const Route = createFileRoute("/")({
           organizer: {
             "@type": "Organization",
             name: "MAKAUT Cultural Association",
-            url: "https://mcamsv.com/",
+            url: "https://www.mcamsv.com/",
           },
-          url: "https://mcamsv.com/",
+          image: ["https://www.mcamsv.com/social-preview.jpg"],
+          url: "https://www.mcamsv.com/",
         }),
       },
     ],
