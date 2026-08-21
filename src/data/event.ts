@@ -23,6 +23,8 @@ export type Artist = {
   /** Replace with a project asset (src/assets/...) whenever a licensed photo is available. */
   image?: string;
   imageAlt: string;
+  /** CSS object-position for the artwork crop. */
+  focal?: string;
   /** Fallback treatment used when no image is present or the image fails to load. */
   tone: "night" | "finale";
   cta: { label: string; to: string };
@@ -53,6 +55,7 @@ export const artists: Artist[] = [
     time: "07:00 PM",
     image: djKoyelAsset.url,
     imageAlt: "DJ Koyel, Kolkata-based DJ, in a yellow jacket studio portrait",
+    focal: "50% 22%",
     tone: "night",
     cta: { label: "Explore DJ Night", to: "/headliners" },
   },
@@ -71,6 +74,7 @@ export const artists: Artist[] = [
     time: "06:00 PM",
     image: morphineAsset.url,
     imageAlt: "The Morphine India band group portrait",
+    focal: "50% 62%",
     tone: "finale",
     cta: { label: "Explore Band Night", to: "/headliners" },
   },
