@@ -39,6 +39,13 @@ export const Route = createFileRoute("/")({
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: "https://mcamsv.com/" },
+      { property: "og:site_name", content: "TRINETRA 2026" },
+      { property: "og:image", content: "https://www.mcamsv.com/social-preview.jpg" },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { name: "twitter:image", content: "https://www.mcamsv.com/social-preview.jpg" },
+      { name: "twitter:title", content: "TRINETRA 2026 — MAKAUT Autumn Fest | Sponsorship" },
+      { name: "twitter:description", content: "TRINETRA 2026, MAKAUT's Autumn Fest on 24–25 September 2026. A two-day cultural festival and brand environment — explore partnership opportunities." },
     ],
     links: [{ rel: "canonical", href: "https://mcamsv.com/" }],
     scripts: [
