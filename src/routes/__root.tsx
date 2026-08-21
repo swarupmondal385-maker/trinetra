@@ -17,6 +17,7 @@ import { ScrollProgress } from "../components/ScrollProgress";
 import { Toaster } from "../components/ui/sonner";
 import { TrinetraAI } from "../components/TrinetraAI";
 import { themeInitScript } from "../components/ThemeToggle";
+import { ORGANIZATION } from "../config/seo";
 
 function NotFoundComponent() {
   return (
@@ -94,7 +95,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         content: "Where Bengal's culture meets the next generation. 24–25 September 2026, MAKAUT WB Main Campus.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:site_name", content: "TRINETRA 2026" },
+      { property: "og:locale", content: "en_IN" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "robots", content: "index, follow, max-image-preview:large" },
+      { name: "theme-color", content: "#9E1717" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
@@ -105,6 +110,27 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: "https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Syne:wght@600;700;800&family=Manrope:wght@300;400;500;600;700&display=swap",
       },
       { rel: "icon", href: "/favicon.png", type: "image/png" },
+      { rel: "apple-touch-icon", href: "/favicon.png" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: ORGANIZATION.name,
+          alternateName: ORGANIZATION.alternateName,
+          url: ORGANIZATION.url,
+          logo: ORGANIZATION.logo,
+          parentOrganization: { "@type": "CollegeOrUniversity", name: ORGANIZATION.parentOrganization },
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: ORGANIZATION.address.locality,
+            addressRegion: ORGANIZATION.address.region,
+            addressCountry: ORGANIZATION.address.country,
+          },
+        }),
+      },
     ],
   }),
   shellComponent: RootShell,
