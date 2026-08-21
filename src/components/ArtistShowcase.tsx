@@ -16,7 +16,8 @@ function ArtistArtwork({ artist }: { artist: Artist }) {
         loading="lazy"
         decoding="async"
         onError={() => setFailed(true)}
-        className="absolute inset-0 -z-10 h-full w-full object-cover object-center transition-transform duration-[1600ms] ease-out group-hover:scale-105"
+        style={{ objectPosition: artist.focal ?? "50% 35%" }}
+        className="absolute inset-0 -z-10 h-full w-full object-cover transition-transform duration-[1600ms] ease-out group-hover:scale-[1.06]"
       />
     );
   }
