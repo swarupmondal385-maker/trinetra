@@ -28,6 +28,9 @@ export type Artist = {
   cta: { label: string; to: string };
 };
 
+import djKoyelAsset from "@/assets/dj-koyel.jpg.asset.json";
+import morphineAsset from "@/assets/morphine-india.jpg.asset.json";
+
 export const statusLabel: Record<ArtistStatus, string> = {
   invited: "Invited artist",
   announced: "Announced",

@@ -17,7 +17,7 @@ export function TrinetraMark({
       decoding="async"
       className={cn(
         "h-8 w-auto select-none object-contain drop-shadow-[0_0_18px_oklch(0.81_0.166_76/35%)]",
-        animate && "animate-[blur-in_1.2s_cubic-bezier(0.16,1,0.3,1)_both]",
+        animate && "animate-blur-in",
         className,
       )}
     />
